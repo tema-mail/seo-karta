@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ru" data-root="../../" data-page="linkbilding/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Ссылки на пальцах</title>
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+.three{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.three .card{border-top:5px solid var(--line)}
+.goal{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.ans{background:var(--surface);border:2px solid var(--accent);border-radius:var(--r);padding:16px 18px;margin-top:10px}
+.flowbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+svg#flow{width:100%;height:auto;display:block;min-width:640px}
+.flsc{overflow-x:auto}
+.fn rect{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+.fn.on rect{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2.5}
+.fn text{fill:var(--fg);font:600 14px var(--f-body)}
+.fn .s{font:400 12px var(--f-body);fill:var(--muted)}
+.fe{fill:none;stroke:var(--line);stroke-width:2}
+.fe.on{stroke:var(--accent);stroke-width:3.5}
+.art{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;font-size:15px;max-width:760px}
+.art .lnk{color:var(--accent);text-decoration:underline;font-weight:600}
+.art .ttl{font-family:var(--f-display);font-size:18px;margin-bottom:8px}
+.quiz .q{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:6px 0}
+.quiz .q code{font-size:14px}
+.quiz .q .r{font-size:13px;flex-basis:100%;display:none}
+.quiz .q.done .r{display:block}
+.quiz .q.ok{border-color:var(--ok)} .quiz .q.bad{border-color:var(--bad)}
+.mini{font-size:12px;padding:5px 10px}
+.month{display:grid;grid-template-columns:90px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+@media (min-width:700px){.flhint{display:none}}
+.month b{font-family:var(--f-display);color:var(--accent)}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+  <div class="kicker">Ссылки · объяснение с нуля · 24.10.2026</div>
+  <h1>Ссылки на пальцах: зачем, куда и откуда</h1>
+  <p class="lead">Ссылка – это когда на другом сайте стоит адрес вашего. Поисковик читает это как рекомендацию: «про них говорят». Но под словом «ссылки» прячутся три разные вещи с разными задачами. Если их не различать, деньги уходят в мусор – как, похоже, было у GRAFIT.</p>
+</header>
+
+<h2>Три разные вещи, которые все называют «ссылками»</h2>
+<div class="three">
+  <div class="card" style="border-top-color:var(--l-seo)"><span class="tag" style="color:var(--l-seo)">для позиций</span><h3>1. Ссылка с весом</h3><p class="small">Статья на чужом сайте (доноре), внутри – обычная ссылка на вашу страницу. Поисковик передаёт часть «доверия» донора вашей странице, и она поднимается в выдаче.</p><p class="small"><b>Где берут:</b> биржи (Miralinks, GoGetLinks, Sape), прямая договорённость с сайтом, местные СМИ.</p><p class="small"><b>Работает:</b> в Google – сильно (фактор №1–2), в Яндексе – слабее и спорно (см. ниже).</p></div>
+  <div class="card" style="border-top-color:var(--l-loc)"><span class="tag" style="color:var(--l-loc)">для людей и доверия</span><h3>2. Ссылка-канал</h3><p class="small">Карточка на Яндекс Картах, 2ГИС, профиль на drive2, пост в Telegram-чате марки. Вес почти не передаёт (часто стоит пометка nofollow – «не учитывать»), но по ней <b>приходят живые люди</b> и звонят.</p><p class="small"><b>Работает:</b> на заявки напрямую и на доверие поисковика к «живой компании».</p></div>
+  <div class="card" style="border-top-color:var(--l-geo)"><span class="tag" style="color:var(--l-geo)">для ИИ</span><h3>3. Упоминание без ссылки</h3><p class="small">«В Новосибирске Teyes ставят в TEYES Sibir на Сухарной» – в обзоре, на форуме, в отзыве. Ссылки нет, но ИИ (Алиса, ChatGPT) читает это и начинает советовать компанию.</p><p class="small"><b>Работает:</b> с ИИ-видимостью упоминания коррелируют втрое сильнее ссылок (Ahrefs, 75 тыс. брендов: 0,664 против 0,218).</p></div>
+</div>
+
+<h2>Что вам нужно – подберу тип</h2>
+<div class="goal" id="goal">
+  <button class="chip" data-g="calls">Звонки и заявки уже сейчас</button>
+  <button class="chip" data-g="pos">Поднять страницу с 11–25 места в топ</button>
+  <button class="chip" data-g="ai">Чтобы ИИ советовал компанию</button>
+  <button class="chip" data-g="new">Сайт новый, ничего нет</button>
+</div>
+<div class="ans" id="ans"><p class="muted" style="margin:0">Выберите цель выше.</p></div>
+
+<h2>Как вес течёт – схема</h2>
+<div class="flowbox">
+  <div class="tabs" data-group="fl" style="margin-top:0"><button data-tab="good">Правильно</button><button data-tab="bad">Как у GRAFIT</button></div>
+  <div class="flsc"><svg id="flow" viewBox="0 0 900 300"></svg></div><div class="small muted flhint">На телефоне схему можно листать вбок.</div>
+  <p class="small" id="flowtxt" style="margin:8px 0 0"></p>
+</div>
+
+<h2>КУДА ставить ссылку (на какую свою страницу)</h2>
+<div class="grid g2">
+  <div class="card"><h3>Да</h3><ul class="clean small">
+    <li><b>Страница, которая уже на 11–25 месте</b> по денежному запросу. Ей не хватает толчка. Например (условно): страница «Teyes на Prado 150» на 14 месте – ссылки сюда.</li>
+    <li><b>Главная</b> – около 40% ссылок (Маркин ZSC 31): так выглядит естественно, и в Google вес расходится по сайту.</li>
+    <li><b>Страница марки или хаб</b>, откуда есть ссылки на модели – вес перетечёт дальше.</li>
+  </ul></div>
+  <div class="card"><h3>Нет</h3><ul class="clean small">
+    <li><b>Страница не в индексе</b> – ссылка на неё бесполезна. У GRAFIT 13 моделей «найдены, но не проиндексированы».</li>
+    <li><b>Страница на 50+ месте</b> – дело не в ссылках, а в самой странице: не похожа на топ, нет нужных слов, не тот тип.</li>
+    <li><b>Статьи блога</b> – если цель заявки. Поднимать надо то, что продаёт.</li>
+    <li><b>Сайт с технической дырой</b> (дубли, 404, закрыто в robots, нет целей) – сначала починить.</li>
+  </ul></div>
+</div>
+<div class="note"><b>Правило минимума (Маркин, «Желудь»):</b> до покупки ссылок сайт похож на сайты топа, страница индексируется, похожа на страницы топа и отвечает на запрос. Ссылка – ускоритель для готовой страницы, а не лекарство для плохой.</div>
+
+<h2>ОТКУДА ставить (лестница по порядку)</h2>
+<div class="tbl"><table>
+<tr><th>#</th><th>Где</th><th>Что даёт</th><th>Деньги</th><th>Когда</th></tr>
+<tr><td>1</td><td>Яндекс Бизнес, 2ГИС, Яндекс Услуги, Zoon, drive2-бизнес (для авто)</td><td>Звонки, доверие, источник для ИИ. Вес – почти нет</td><td>бесплатно; drive2 – 3 250 ₽/мес</td><td>Сразу, у любого локального бизнеса</td></tr>
+<tr><td>2</td><td>Партнёры, поставщики, дилеры («где купить / где установить» у производителя), местные СМИ, паблики</td><td>Сильная естественная ссылка + упоминание</td><td>от 0 до договорённости</td><td>Первый месяц</td></tr>
+<tr><td>3</td><td>Экспертные материалы: drive2, Дзен, vc.ru (не реклама!), ответы в чатах марок</td><td>Упоминания для ИИ, живые люди</td><td>время</td><td>1–2 в месяц постоянно</td></tr>
+<tr><td>4</td><td>Статьи на биржах (Miralinks, GoGetLinks, PR.Sape) на тематических и местных сайтах</td><td>Вес для позиций, сильнее в Google</td><td>от сотен до тысяч ₽ за статью; кейс Воронеж: 3 статьи – 7 500 ₽</td><td>Когда 1–3 сделаны и страница упирается в 11–25 место</td></tr>
+<tr><td>✕</td><td>Прогоны по сотням каталогов, иностранные сайты, «пакеты пресс-релизов», аренда тысяч ссылок, сетки сайтов</td><td>Мусор или фильтр</td><td>деньги в никуда</td><td>Никогда. У GRAFIT 84 ссылки с wholehousecleaningservices.com – вот это</td></tr>
+</table></div>
+
+<h2>Как выглядит одна правильная ссылка</h2>
+<div class="art">
+  <div class="ttl">Почему после установки магнитолы на Prado 150 не работает камера заднего вида</div>
+  <p>Чаще всего дело в трёх вещах: камера штатная и требует адаптера, перепутан провод заднего хода или в настройках выбран не тот формат сигнала. Первые две проверяются за 10 минут мультиметром…</p>
+  <p>Если камера штатная, нужен адаптер под конкретный год выпуска – таблица совместимости для Prado 150 есть у <span class="lnk">TEYES Sibir</span>, установочного центра в Новосибирске…</p>
+</div>
+<ul class="clean small" style="margin-top:10px">
+  <li><b>Тема</b> – реальный вопрос читателей сайта-донора, а не «лучший установочный центр».</li>
+  <li><b>Ссылка в тексте</b>, рядом с полезным фактом, ведёт на нужную страницу (таблица совместимости Prado), а не на главную.</li>
+  <li><b>Анкор</b> (текст ссылки) – бренд. Не «установка магнитолы купить недорого».</li>
+  <li><b>Донор</b> живой: у него есть трафик из Яндекса, он про авто или про Новосибирск, на странице 1–2 внешние ссылки, а не 15.</li>
+</ul>
+
+<h2>Анкоры: проверьте себя</h2>
+<p class="muted small">Анкор – текст, на который нажимают. Хороший это анкор или плохой?</p>
+<div class="quiz" id="quiz"></div>
+
+<h2>Риски – по-честному</h2>
+<div class="grid g2">
+  <div class="card"><h3>Что говорят поисковики</h3><p class="small"><b>Яндекс</b> официально называет SEO-ссылки поисковым спамом; ценность таких ссылок «существенно снижается», возможно понижение сайта – фильтр Минусинск. Рекламные ссылки просит помечать rel="sponsored".</p><p class="small"><b>Google</b>: купленная ссылка без пометки sponsored – нарушение (link spam). В 2026 уже было четыре спам-апдейта, последний – 24.09–08.10, самый долгий.</p></div>
+  <div class="card"><h3>Что бывает на самом деле</h3><p class="small">Свежих кейсов «купили – получили фильтр» за 2025–2026 не нашли. Гораздо чаще другое: <b>ссылку просто не учитывают</b> – деньги потрачены, эффекта ноль. Особенно с мусорных доноров, «тут/здесь»-анкоров и прогонов.</p><p class="small">Где бьёт сильно: много ссылок разом, коммерческие анкоры «купить/цена», доноры, которые продают ссылки всем подряд.</p></div>
+</div>
+<div class="note warn"><b>Спор, который надо знать.</b> Маркин (ZSC 26, 31, 2024–2026): «с весны 2024 биржевые ссылки в Яндексе работают заметно». Официально Яндекс говорит обратное, и независимого подтверждения «весны 2024» в свежих источниках не нашли. Во всех кейсах с разбивкой Google реагирует на ссылки сильнее Яндекса. <b>Наш вывод:</b> для Яндекса ссылки – четвёртый по важности рычаг после поведения, текста и покрытия разделов; для Google – один из главных.</div>
+
+<h2>Свежие кейсы с цифрами</h2>
+<div class="tbl"><table>
+<tr><th>Кто</th><th>Что делали</th><th>Результат</th><th>Верить</th></tr>
+<tr><td>Рекламное производство, Екатеринбург, B2B, 05.2025–06.2026</td><td>~250 вечных ссылок Sape с доноров своего региона, 20–25 тыс. ₽/мес, 70% анкоров – голый адрес сайта</td><td>Визиты из Яндекса 452 → 872 (+93%), из Google 258 → 906 (+251%) за 13 мес. Заявки не указаны</td><td><span class="tag part">продавец ссылок</span> <a href="https://workspace.ru/cases/arifmetika-prodvizheniya-kak-250-vechnyh-ssylok-dali-251-k-trafiku-v-google/" target="_blank" rel="noopener">сверено</a></td></tr>
+<tr><td>Магазин посуды, 10.2025–01.2026</td><td>110 ссылок: статьи, крауд, каталоги</td><td>Трафик +290%</td><td><span class="tag part">агентство</span></td></tr>
+<tr><td>Воронеж, услуги</td><td>3 статьи на Miralinks, 7 500 ₽</td><td>Один запрос с 25 на 14 место</td><td><span class="tag part">агентство</span></td></tr>
+<tr><td>Автосервис, 08.2026</td><td>Ссылки не покупали; до этого владелец купил «продвижение в топ» – позиции не сдвинулись. Занялись картами и страницами услуг</td><td>Обращений с карт – вдвое, заявок с сайта – в 2,5 раза</td><td><span class="tag part">агентство</span></td></tr>
+<tr><td>Автоцентр (Маркин, с 2022)</td><td>1 700 ссылок с форумов за год: живые, тематические, DR 30+, 150+ посетителей в сутки</td><td>Запросов в выдаче 2 342 → 10 954</td><td><span class="tag">курс, 2022–2023</span></td></tr>
+</table></div>
+<p class="small muted">Ни в одном кейсе не было контрольной группы страниц – поэтому «рост от ссылок» везде смешан с работой над сайтом. Независимых кейсов с заявками нет.</p>
+
+<h2>Как проверить, что ссылки работают</h2>
+<p>Берём 10 похожих страниц на 11–25 месте (например, модели одной марки). Пять получают ссылки, пять – нет, и обе группы в это время не трогаем. Через 1–3 месяца смотрим разницу между группами, а не «до и после»: так видно эффект ссылок отдельно от сезона и апдейтов. Мерим позиции, клики в Вебмастере и GSC и заявки по страницам.</p>
+
+<h2>План на локальный бизнес – по месяцам</h2>
+<div class="month"><b>Месяц 0</b><div class="small">Проверка: страницы в индексе, техника чистая, цели на заявки и звонки стоят. Выбрать 5–10 денежных страниц на 11–25 месте. Без этого – стоп.</div></div>
+<div class="month"><b>Месяц 1</b><div class="small">Карты и справочники заполнены полностью; одинаковые название, адрес, телефон везде. Партнёры, поставщики, производитель («где установить») – договориться о ссылке. Просить отзывы у реальных клиентов.</div></div>
+<div class="month"><b>Месяц 2</b><div class="small">1–2 экспертных материала: кейс на drive2, разбор на Дзене, ответы в чатах марок – от имени компании, по правилам.</div></div>
+<div class="month"><b>Месяц 3+</b><div class="small">2–4 статьи в месяц на биржах – на выбранные страницы, с проверкой донора, анкоры: в основном голый адрес и бренд. Покупать равномерно каждый месяц: разовая пачка даёт рост и откат. Через 1–3 месяца – сравнить с контрольной группой.</div></div>
+<div class="note"><b>Бюджет:</b> Маркин советует 10–25% бюджета продвижения (из 40 тыс. – 10 тыс. на ссылки). Кейс Екатеринбурга – 20–25 тыс. ₽/мес. Для одного города и 5–10 страниц разумный старт – 5–15 тыс. ₽/мес на биржевую часть (оценка). Остальное – время на карты, партнёров и материалы.</div>
+
+<p class="small muted" style="margin-top:20px">Источники: база знаний (Маркин ZSC 26, 31; «Желудь» 2025; «Насос» 2026), правила Яндекса и Google, кейсы 2025–2026 (workspace.ru, агентства). В «обучении маркетолога» отдельного урока про ссылки нет – там конверсия, лид-магниты и страницы; ссылки разобраны только в курсах Маркина.</p>
+<p><a class="btn ghost" href="../">← Ссылки и площадки: полный список</a></p>
+</main>
+<script>
+const G={
+ calls:["Ссылки-каналы, не ссылки с весом","Карточки на Яндекс Картах и 2ГИС – полностью заполненные, с ценами, фото и свежими отзывами. drive2-бизнес для авто. Ответы в чатах марок от имени компании. Это даёт звонки в первые недели. Биржевые ссылки заявок сразу не дают – они поднимают позиции через 1–3 месяца, и то если страница готова."],
+ pos:["Ссылки с весом – на эту страницу и главную","Сначала проверить: страница в индексе и похожа на топ. Потом 2–4 статьи в месяц на тематических или местных сайтах, ссылка в тексте, анкор – адрес или бренд. Плюс 5 похожих страниц без ссылок как контрольная группа. Ждать 1–3 месяца. В Google эффект сильнее, чем в Яндексе."],
+ ai:["Упоминания, а не ссылки","ИИ советует тех, о ком пишут в разных местах одно и то же: название, город, что делают. Карточки на картах с отзывами, кейсы на drive2 и Дзене, ответы на форумах, упоминание в обзорах «где сделать в Новосибирске». И своя страница, точно отвечающая на вопрос, – без неё упоминания работают слабо."],
+ new:["Сначала каналы, вес – потом","Новому сайту биржевые ссылки рано: поисковик ещё не знает сайт. Месяц 1–2: карты, справочники, партнёры, производитель. Параллельно – страницы услуг. Биржи – когда страницы в индексе и дошли до 11–25 места. Для Google возраст домена важен – ссылки там помогают раньше."],
+};
+document.getElementById("goal").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;
+ document.querySelectorAll("#goal .chip").forEach(x=>x.setAttribute("aria-pressed",x===b));
+ const [h,t]=G[b.dataset.g];document.getElementById("ans").innerHTML=`<h3 style="margin-top:0">${h}</h3><p class="small" style="margin:0">${t}</p>`;});
+document.querySelectorAll("#goal .chip").forEach(x=>x.setAttribute("aria-pressed","false"));
+
+const NS="http://www.w3.org/2000/svg",svg=document.getElementById("flow");
+const nodes={donor:[20,40,"Сайт-донор","живой, про авто, с трафиком"],art:[250,40,"Статья","про реальный вопрос"],page:[480,40,"Ваша страница","на 11–25 месте, в индексе"],top:[710,40,"Топ-10","→ клики → заявки"],
+ junk:[20,190,"Мусорный донор","чужая тема, продаёт всем"],orph:[480,190,"Страница-сирота","не в индексе / 404"],none:[710,190,"Ничего","деньги потрачены"]};
+const edges={good:[["donor","art"],["art","page"],["page","top"]],bad:[["junk","art"],["art","orph"],["orph","none"]]};
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);(p||svg).appendChild(e);return e;}
+function drawFlow(m){svg.innerHTML="";const on=new Set(edges[m].flat());
+ Object.values(edges).flat().forEach(([a,b])=>{const A=nodes[a],B=nodes[b];const x1=A[0]+170,y1=A[1]+40,x2=B[0],y2=B[1]+40;el("path",{d:`M${x1},${y1} C${(x1+x2)/2},${y1} ${(x1+x2)/2},${y2} ${x2},${y2}`,class:"fe"+(edges[m].some(e=>e[0]===a&&e[1]===b)?" on":"")});});
+ for(const k in nodes){const [x,y,t,s]=nodes[k];const g=el("g",{class:"fn"+(on.has(k)?" on":"")});el("rect",{x,y,width:170,height:80,rx:12},g);
+  const a=el("text",{x:x+12,y:y+32},g);a.textContent=t;const b=el("text",{x:x+12,y:y+56,class:"s"},g);b.textContent=s;}
+ document.getElementById("flowtxt").textContent= m==="good"?"Живой тематический донор → статья, которую читают → страница, готовая к топу. Вес доходит и превращается в клики.":"Мусорный донор → статья → страница, которой нет в индексе. Вес теряется на каждом шаге. У GRAFIT: спам-домены со ссылками, 13 моделей не в индексе, 3 – 404.";}
+document.querySelectorAll('.tabs[data-group="fl"] button').forEach(b=>b.addEventListener("click",()=>drawFlow(b.dataset.tab)));drawFlow("good");
+
+const Q=[
+ ["teyes-sibir.ru",1,"Голый адрес – самый естественный, основа анкор-листа (в кейсе Екатеринбурга – 70%)."],
+ ["TEYES Sibir",1,"Бренд – безопасно и работает на узнаваемость, в том числе для ИИ."],
+ ["установочный центр TEYES Sibir в Новосибирске",1,"Разбавленный анкор: бренд + смысл + город. Немного таких – хорошо."],
+ ["здесь",0,"Пустой анкор: не адрес и не бренд, смысла не несёт. Маркин прямо советует не использовать «здесь», «тут», «по ссылке»."],
+ ["установка магнитолы новосибирск недорого",0,"Прямой коммерческий анкор – главный риск фильтра. Максимум 0–5% от всех."],
+ ["купить teyes cc3 цена",0,"«Купить / цена» в анкоре – это ещё и реклама по закону: нужна маркировка. Не использовать."],
+];
+const qz=document.getElementById("quiz");
+Q.forEach(([a,ok,why])=>{const d=document.createElement("div");d.className="q";d.innerHTML=`<code>${a}</code><button class="chip mini">хороший</button><button class="chip mini">плохой</button><div class="r"></div>`;
+ const [bg,bb]=d.querySelectorAll("button");const res=(pick)=>{d.classList.add("done");const right=(pick===ok);d.classList.toggle("ok",right);d.classList.toggle("bad",!right);d.querySelector(".r").innerHTML=(right?"✓ Верно. ":"✕ Нет. ")+why;};
+ bg.onclick=()=>res(1);bb.onclick=()=>res(0);qz.appendChild(d);});
+</script>
+<script src="../../assets/site.js"></script>
+</body>
+</html>
