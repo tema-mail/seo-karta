@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru" data-root="../" data-page="linkbilding/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Ссылки и площадки</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.ladder{display:grid;gap:10px;margin:16px 0}
+.step{display:grid;grid-template-columns:56px 1fr;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer}
+.step .lv{font-family:var(--f-display);font-size:28px;color:var(--accent);line-height:1}
+.step h3{margin:0 0 4px;font-size:16px}
+.step .more{display:none;font-size:14px;margin-top:8px}
+.step.open{border-color:var(--accent)} .step.open .more{display:block}
+.fl{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+tr[hidden]{display:none}
+.can{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.can .card{border-top:4px solid var(--line)}
+.can .ok{border-top-color:var(--ok)} .can .part{border-top-color:var(--part)} .can .bad{border-top-color:var(--bad)}
+.pipe{display:flex;flex-direction:column;gap:0;max-width:760px}
+.pipe .p{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.pipe .p.own{background:var(--accent-soft);border-color:var(--accent)}
+.pipe .p b{font-family:var(--f-mono);font-size:13px;color:var(--accent)}
+.pipe .a{text-align:center;color:var(--muted);line-height:1.4}
+.anc{display:flex;height:30px;border-radius:8px;overflow:hidden;margin:10px 0;font-size:12px;font-weight:600;color:#fff}
+.anc div{display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+  <div class="kicker">Внешние сигналы · проверено 24.10.2026</div>
+  <h1>Ссылки, площадки и упоминания – для локального бизнеса</h1>
+  <p class="lead">Для бизнеса в одном городе ссылки с бирж – последнее, что нужно. Работает лестница: карты и отзывы → упоминания на площадках, которые читают поиск и ИИ → немного аккуратных статей → и только потом биржи. Агент находит, проверяет и готовит всё; регистрируется и жмёт «Опубликовать» владелец в своём браузере.</p>
+</header>
+
+<h2>Лестница: что делать по порядку</h2>
+<p class="muted small">Нажмите на ступень – раскроется подробно.</p>
+<div class="ladder" id="ladder"></div>
+
+<div class="note"><b>Почему не ссылки, а упоминания.</b> С появлением бренда в ИИ-ответах Google упоминания коррелируют втрое сильнее ссылок: 0,664 против 0,218 (Ahrefs, 75 тыс. брендов, 2025; корреляция, не причина). Алиса AI берёт источники из верха обычного поиска, по одному исследованию подхватывает новый материал примерно за 7 дней (Visiobrand, 20.08.2026, ниша маркетинга, данные продавца). Значит: упоминание «TEYES Sibir, Новосибирск, установка Teyes» на площадке, которая сама в топе Яндекса, работает даже без ссылки.</div>
+
+<h2>Площадки</h2>
+<div class="fl" id="pf">
+  <button class="chip" aria-pressed="true" data-f="all">Все</button>
+  <button class="chip" aria-pressed="false" data-f="map">Карты и справочники</button>
+  <button class="chip" aria-pressed="false" data-f="media">Медиа и блоги</button>
+  <button class="chip" aria-pressed="false" data-f="ugc">Сообщества и отзовики</button>
+  <button class="chip" aria-pressed="false" data-f="ex">Биржи</button>
+</div>
+<div class="tbl"><table id="pt">
+<tr><th>Площадка</th><th>Ссылка</th><th>Польза Я / G / ИИ</th><th>Правила – главное</th></tr>
+<tr data-f="map"><td><b>Яндекс Бизнес / Карты</b></td><td>в карточке, вес не передаёт</td><td>3 / 0 / 3</td><td>Отзыв «за деньги или по просьбе друзей» – накрутка, снимают. Просить реальных клиентов можно промоматериалами из кабинета. <a href="https://yandex.ru/support/reviews/ru/rules" target="_blank" rel="noopener">правила</a></td></tr>
+<tr data-f="map"><td><b>2ГИС</b></td><td>в карточке, атрибут не проверен</td><td>2 / 0 / 2</td><td>В Новосибирске – ключевой справочник. Красный флаг – резкий всплеск отзывов</td></tr>
+<tr data-f="map"><td><b>Яндекс Услуги</b></td><td>профиль исполнителя</td><td>2 / 0 / 1</td><td>Для фида исполнителей нужен ИП или юрлицо</td></tr>
+<tr data-f="map"><td><b>Zoon</b></td><td>nofollow через редирект (проверено)</td><td>1 / 1 / 1</td><td>Есть платные тарифы</td></tr>
+<tr data-f="map"><td><b>Google Business Profile</b></td><td>есть</td><td>0 / 2 / 1</td><td>С 09.2024 регистрация на российские номера закрыта, верификация почти не проходит. Новые не заводим, существующие поддерживаем</td></tr>
+<tr data-f="map"><td><b>Авито (профиль компании)</b></td><td>в объявлениях режут</td><td>1 / 0 / 1</td><td>Компания не может выдавать себя за частника; много объявлений в одной подкатегории – блок</td></tr>
+<tr data-f="media"><td><b>vc.ru</b></td><td>не проверено</td><td>2 / 2 / 3</td><td>«Посты, продвигающие коммерческие сервисы, услуги или ссылки… запрещены» (сверил 24.10). Бан от 3 часов, дальше вдвое. Только экспертный кейс. <a href="https://vc.ru/rules" target="_blank" rel="noopener">правила</a></td></tr>
+<tr data-f="media"><td><b>Хабр</b></td><td>nofollow (проверено)</td><td>1 / 2 / 3</td><td>Реклама – только в платном корпоративном блоге. Для автосервиса – редкий технический кейс (CAN-шина, прошивка)</td></tr>
+<tr data-f="media"><td><b>Дзен</b></td><td>не проверено</td><td>2 / 1 / 2</td><td>Экосистема Яндекса, Алиса на него опирается. Спам – «неполные» статьи с продолжением на сайте</td></tr>
+<tr data-f="media"><td><b>Городские медиа</b> (НГС, Сиб.фм)</td><td>разная</td><td>2 / 2 / 2</td><td>Комментарий эксперта, новость компании; если реклама – маркировка через ОРД</td></tr>
+<tr data-f="ugc"><td><b>DRIVE2</b></td><td>не проверено (403 скриптам)</td><td>2 / 1 / 2 для авто</td><td>Бизнес-аккаунт 3 250 ₽/мес: отзывы клиентов в бортжурналах их машин со ссылкой на страницу компании</td></tr>
+<tr data-f="ugc"><td><b>Пикабу</b></td><td>не проверено</td><td>1 / 1 / 2</td><td>SEO, ссылки на товары и ответы от лица бренда – только с Пикабу+ или в промо (п. 8.1–8.3)</td></tr>
+<tr data-f="ugc"><td><b>Отзовик, IRecommend</b></td><td>не проверено</td><td>1 / 1 / 2</td><td>Частые источники ИИ. Только ответы от компании, никаких «отзывов от клиентов»</td></tr>
+<tr data-f="ugc"><td><b>Telegram-чаты и VK-группы</b> марок и города</td><td>по правилам чата</td><td>0 / 0 / 1</td><td>Прямой путь к клиенту. Ищем через TGStat, Telemetr, поиск VK. Правила – в закрепе</td></tr>
+<tr data-f="ex"><td><b>Miralinks</b></td><td>статьи</td><td>по донору</td><td>49 394 площадки на странице; примеры размещений 300–309 000 ₽ – не прайс</td></tr>
+<tr data-f="ex"><td><b>GoGetLinks</b></td><td>вечные ссылки, статьи</td><td>по донору</td><td>81 253 сайта, 1 754 задачи за сутки; цену ставит площадка</td></tr>
+<tr data-f="ex"><td><b>PR.Sape</b></td><td>статьи, новости, крауд</td><td>по донору</td><td>Оплата после индексации; цены не нашли. Арендные ссылки Sape – не для нас</td></tr>
+<tr data-f="ex"><td><b>Prposting</b></td><td>статьи</td><td>по донору</td><td>23 250+ сайтов, цены не проверены</td></tr>
+<tr data-f="ex"><td><b>Collaborator</b></td><td>статьи, Telegram</td><td>–</td><td>Цены в гривнах; по вторичным данным, с РФ не работает</td></tr>
+</table></div>
+<p class="small muted">Польза – наша оценка 0–3. «Проверено» – ответ сайта посмотрен кодом 24.10. Остальные атрибуты ссылок (Яндекс Карты, 2ГИС, Дзен, Пикабу, drive2) кодом не снять из-за антибота – смотреть руками.</p>
+
+<h2>Как найти тематические чаты и не получить бан</h2>
+<div class="grid g3">
+  <div class="card"><h3>Где искать</h3><ul class="clean small">
+    <li>Telegram: TGStat, Telemetr. Запросы: «автозвук Новосибирск», «&lt;марка&gt; 54», «Teyes», «автобарахолка НСК»</li>
+    <li>VK: «&lt;марка&gt; клуб Новосибирск» – смотреть, жива ли стена</li>
+    <li>drive2: сообщества марок, клубные форумы</li>
+    <li>Операторы поиска: <code>site:drive2.ru "Teyes" "Prado"</code>, <code>"Teyes Sibir" -site:teyes-sibir.ru</code> – упоминания без ссылки</li>
+  </ul></div>
+  <div class="card"><h3>Как изучить правила</h3><ol class="clean small">
+    <li>Закреп и описание чата, «Правила» в VK</li>
+    <li>50 последних сообщений: есть ли посты компаний, как на них реагируют</li>
+    <li>Реклама «по согласованию» – написать админу с готовым текстом</li>
+    <li>В реестр: реклама разрешена / по согласованию / запрещена; ссылки можно / нельзя</li>
+  </ol></div>
+  <div class="card"><h3>Как писать</h3><ul class="clean small">
+    <li>Отвечаем на реальный вопрос целиком в сообщении, без «подробнее у нас»</li>
+    <li>Подписываемся честно: «я из TEYES Sibir». «Довольный клиент» от имени компании – скрытая реклама</li>
+    <li>Ссылку – только если можно и на полезную страницу (таблица совместимости), не на главную</li>
+    <li>1–2 сообщения в неделю на чат, один текст в разные чаты не копируем</li>
+  </ul></div>
+</div>
+
+<h2>Статья под биржу или площадку</h2>
+<div class="grid g2">
+  <div class="card"><h3>Как выбрать донора</h3><p class="small"><b>Сразу нет:</b> нет трафика из Яндекса или он упал вдвое за полгода; сайт «обо всём» (казино, займы, крипта); на странице больше 3–5 внешних ссылок; не в индексе Яндекса; плохие спам-метрики CheckTrust.</p><p class="small"><b>Плюсы:</b> тематика авто или город, аудитория из Новосибирска и Сибири, живые комментарии, площадку уже цитирует Алиса по нашим запросам, ссылка ставится в текст рядом с фактом.</p></div>
+  <div class="card"><h3>Анкоры на 10 размещений (ориентир)</h3>
+    <div class="anc"><div style="width:55%;background:var(--l-geo)">безанкорные 55%</div><div style="width:28%;background:var(--l-seo)">бренд 28%</div><div style="width:13%;background:var(--l-loc)">разбавл.</div><div style="width:4%;background:var(--l-conv)"></div></div>
+    <p class="small">URL и «здесь» – 50–60%, бренд «TEYES Sibir» – 25–30%, разбавленные «установка Teyes в нашем центре в Новосибирске» – 10–15%, точные коммерческие – 0–5%. Главный риск фильтра Минусинск – прямые коммерческие анкоры.</p>
+    <p class="small"><b>Текст:</b> тема – реальный вопрос читателей донора, а не «лучший установочный центр». Ссылка во 2–3 абзаце, на страницу модели или услуги. Факты и фото – свои. Если по сути реклама – пометка «Реклама» и erid через ОРД.</p></div>
+</div>
+<div class="note bad"><b>Риски:</b> Яндекс официально называет SEO-ссылки поисковым спамом (<a href="https://yandex.ru/company/rules/optimization" target="_blank" rel="noopener">правила</a>). Google – покупная ссылка без rel="sponsored" = link spam (<a href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener">политика, 28.08.2026</a>); в 2026 уже четыре спам-апдейта. Наш потолок – 2–4 размещения в месяц на сайт, и только когда страница уже в индексе и упирается во внешние сигналы.</div>
+
+<h2>Можно ли, чтобы агент сам регистрировался</h2>
+<div class="can">
+  <div class="card ok"><span class="tag ok">да, полностью</span><h3>Найти и проверить</h3><p class="small">Площадки, чаты, доноров, правила, метрики – и вести реестр. Готовить профиль: тексты, услуги, фото без госномеров, часы, ответы на отзывы.</p></div>
+  <div class="card part"><span class="tag part">да, с вами</span><h3>Регистрация в вашем Chrome</h3><p class="small">Агент открывает площадку в вашем браузере, где вы уже вошли, и заполняет все поля. Вы вводите код из SMS, решаете капчу и нажимаете «Отправить». На одну площадку – пара минут вашего времени вместо получаса. Письма админам и редакциям – так же: черновик агента, отправка после вашего «да».</p></div>
+  <div class="card bad"><span class="tag bad">нет</span><h3>Массовые аккаунты и отзывы</h3><p class="small">Виртуальные номера, капча-решатели, мультиаккаунты – бан аккаунта и карточки; карточку, заведённую на чужой номер, потом не вернуть. Отзывы «от клиентов», накрутка поведения – запрещены правилами Яндекса и рискуют попасть под недобросовестную рекламу и конкуренцию.</p></div>
+</div>
+
+<h2>Конвейер и агенты</h2>
+<div class="pipe">
+  <div class="p"><b>link-ploshchadki</b> – находит площадки, чаты и доноров по городу и тематике → реестр «найдено»</div><div class="a">↓</div>
+  <div class="p"><b>link-donor-check</b> – индекс, трафик, спам, правила, цитирует ли Алиса → «годится / нет» с причиной</div><div class="a">↓</div>
+  <div class="p"><b>seo-lead</b> – отбирает 3–5 в месяц под конкретную страницу, которую поднимаем</div><div class="a">↓</div>
+  <div class="p"><b>link-statya</b> / <b>karty-otzyvy</b> – текст под площадку, профиль, ответы на отзывы → черновик</div><div class="a">↓</div>
+  <div class="p own"><b>владелец</b> – «да» → регистрация и публикация в своём Chrome; агент заполняет поля</div><div class="a">↓</div>
+  <div class="p"><b>link-donor-check, контроль</b> – через 7 / 30 / 90 дней: ссылка жива, в индексе, видна в Вебмастере; называют ли нас Алиса и ChatGPT</div><div class="a">↓</div>
+  <div class="p"><b>реестр</b> – одна таблица на проект: площадка, адрес, rel, анкор, целевая страница, цена, дата, статус, последняя проверка</div>
+</div>
+<p class="small muted">Готового инструмента под Яндекс и рунет на GitHub нет – собираем своё. Как образцы: linkforge (письмо уходит только после одобрения), cc-backlinks (ссылки конкурентов из Common Crawl), backlink-checker (живы ли купленные ссылки), tgstat-mcp (поиск чатов). Источник правды по нашим ссылкам – API Вебмастера links/external, через yandex-dannye.</p>
+
+<h3>Осталось проверить руками</h3>
+<ul class="clean small"><li>rel ссылки на сайт в Яндекс Картах, 2ГИС, Дзене, Пикабу, drive2, Отзовике</li><li>как подтверждаются права в Яндекс Бизнесе и 2ГИС</li><li>правила Отзовика, drive2 и Авито по ссылкам</li><li>цены PR.Sape, Prposting; тариф API TGStat</li></ul>
+</main>
+
+<script>
+const L=[
+ ["Карты и отзывы","Яндекс Бизнес, 2ГИС, Яндекс Услуги, Zoon, Авито, drive2 для авто","Одинаковые название, адрес, телефон везде. Полная карточка: рубрики, услуги с ценами, фото работ, часы, сайт с utm. Отзывы – только у реальных клиентов: QR и SMS после заказа, ответ на каждый. Для ИИ решает число свежих текстовых отзывов, а не рейтинг. Это фундамент – без него остальное слабее."],
+ ["Упоминания на площадках, которые читает ИИ","vc.ru, Дзен, drive2, городские медиа, Хабр для технических кейсов","1–2 экспертных материала в месяц: реальный кейс, разбор проблемы, сравнение. С упоминанием бренда и города; ссылка – как разрешают правила. Площадки, которые сами в топе Яндекса, – источник для Алисы."],
+ ["Сообщества","Telegram-чаты марок и города, VK-клубы, форумы, сообщества drive2","Ответы на реальные вопросы от имени компании, по правилам чата. Даёт и прямых клиентов, и упоминания."],
+ ["Биржи","Miralinks, GoGetLinks, PR.Sape, Prposting","Только когда первые три ступени сделаны, страница-цель в индексе и упирается во внешние сигналы. 2–4 размещения в месяц, донор – через проверку, анкоры – по плану."],
+];
+const ld=document.getElementById("ladder");
+L.forEach(([h,w,m],i)=>{const d=document.createElement("div");d.className="step"+(i===0?" open":"");
+ d.innerHTML=`<div class="lv">${i+1}</div><div><h3>${h}</h3><div class="small muted">${w}</div><div class="more">${m}</div></div>`;
+ d.onclick=()=>d.classList.toggle("open");ld.appendChild(d);});
+document.getElementById("pf").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+ document.querySelectorAll("#pf .chip").forEach(x=>x.setAttribute("aria-pressed",x===c));
+ document.querySelectorAll("#pt tr[data-f]").forEach(r=>r.hidden=!(c.dataset.f==="all"||r.dataset.f===c.dataset.f));});
+</script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

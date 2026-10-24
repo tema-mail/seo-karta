@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru" data-root="../" data-page="benchmarki/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Свежие данные SEO</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.fl{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 16px}
+.b{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;margin:10px 0}
+.b[hidden]{display:none}
+.b h3{margin:4px 0 8px;font-size:17px}
+.b .meta{font-size:13px;color:var(--muted)}
+.b .fig{font-family:var(--f-display);font-size:24px;color:var(--accent);margin:6px 0}
+.b .us{border-top:1px dashed var(--line);margin-top:10px;padding-top:10px;font-size:14px}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+  <div class="kicker">Бенчмарки · июль–октябрь 2026 · собрано 24.10.2026</div>
+  <h1>Что нового в SEO, AEO и GEO за 3 месяца</h1>
+  <p class="lead">Отобрано то, что влияет на коммерческое и локальное SEO и на то, советует ли ИИ компанию. У каждой находки – дата, источник, выборка и пометка, насколько ей можно верить. Два ключевых источника (arXiv и «Ашманов и партнёры») открыл и сверил сам.</p>
+</header>
+
+<div class="note"><b>Главный вывод для нас.</b> В России ИИ-видимость – это продолжение обычного SEO, а не отдельная магия. Алиса берёт больше 90% источников из топ-10 Яндекса. ИИ советует компанию, когда видит её собственную страницу, точно отвечающую на вопрос, и когда у неё много свежих отзывов на картах. Разметка и llms.txt ИИ-цитаты не поднимают.</div>
+
+<div class="fl" id="fl">
+  <button class="chip" aria-pressed="true" data-f="all">Все</button>
+  <button class="chip" aria-pressed="false" data-f="yes">Берём в работу</button>
+  <button class="chip" aria-pressed="false" data-f="no">Не тратим время</button>
+  <button class="chip" aria-pressed="false" data-f="ru">Россия</button>
+  <button class="chip" aria-pressed="false" data-f="loc">Локальный бизнес</button>
+</div>
+<div id="list"></div>
+
+<h2>Что это меняет в работе</h2>
+<div class="tbl"><table>
+<tr><th>Было</th><th>Становится</th></tr>
+<tr><td>ИИ-видимость – отдельная услуга со своими трюками</td><td>Сначала топ-10 Яндекса по главному запросу услуги, потом – всё остальное</td></tr>
+<tr><td>Мерить ИИ «на глаз»</td><td>Отчёт «Видимость в Алисе AI» в Вебмастере – основная метрика, снимать каждую неделю через yandex-dannye; плюс ручная проба 20–30 вопросов раз в месяц</td></tr>
+<tr><td>Рейтинг 4,9 на картах – цель</td><td>Рейтинг 4,7+ – только допуск. Различает количество свежих текстовых отзывов</td></tr>
+<tr><td>Ставим llms.txt и schema «для ИИ»</td><td>llms.txt не продаём в КП. Schema – ради обычного поиска; факты пишем видимым текстом</td></tr>
+<tr><td>Покупаем ссылки</td><td>Вкладываемся в упоминания там, где ИИ их читает: drive2, форумы, отзовики, видео, местные СМИ</td></tr>
+<tr><td>Считаем визиты с поиска</td><td>Считаем звонки из карточек и ИИ-рефереров в Метрике: ИИ-визит конвертирует лучше SEO-визита (3,9% против 2,8%)</td></tr>
+<tr><td>Магазину хватает сайта</td><td>Магазину нужен фид в Яндекс Товары – товарные ответы Алисы строятся оттуда</td></tr>
+</table></div>
+
+<h2>Чего свежего не нашлось</h2>
+<ul class="clean">
+  <li>Официальных заявлений Яндекса о новых алгоритмах. Про «июньский апдейт» – только наблюдения блогов без цифр.</li>
+  <li>Замеров, как Алиса в Картах выбирает организации и какой вес у отзывов.</li>
+  <li>Независимых данных «упоминания против ссылок» за 2026 – везде пересказ Ahrefs 2025.</li>
+  <li>Доли AI Overviews на локально-коммерческих запросах.</li>
+</ul>
+<div class="note warn"><b>Не подтвердилось, не использовать в КП:</b> «BrightLocal 28,5%», «1 851 бизнес, 444 против 192 отзывов», «seoClarity 48% ответов без цитат», «Whitespark 68% локальных запросов с AIO», «Steady Demand 2 880 промптов». Цифры ходят по блогам, первоисточники не нашлись.</div>
+</main>
+
+<script>
+const B = [
+ {t:"Алиса AI берёт источники из топ-10 Яндекса", fig:">90%", f:["yes","ru"], rel:["первоисточник прочитан","ok"],
+  d:"06.10.2026 · «Ашманов и партнёры», cnews.ru", u:"https://www.cnews.ru/news/line/2026-10-06_alisa_ai_aktivno_vstraivaetsya",
+  s:"Выборки коммерческих запросов, апрель и июль 2026. Быстрый ИИ-ответ в интернет-магазинах: ~0,1% запросов в апреле → ~15% в июле, часто выше всей выдачи. В ответ – до 5 источников. «Товарные» ответы собираются из Яндекс Товаров – свой сайт там преимущества не даёт.",
+  us:"Без топ-10 Яндекса в Алису не попасть. Магазинам – фид в Яндекс Товары как отдельный вход."},
+ {t:"Отчёт «Видимость в Алисе AI» в Вебмастере", fig:"SoV", f:["yes","ru"], rel:["официальная справка","ok"],
+  d:"весна 2026 (старше 3 мес., но ключевое) · справка Яндекса", u:"https://yandex.ru/support/webmaster/ru/service/alice-answers",
+  s:"Доля ответов Алисы, где процитирован сайт, за 3 месяца, обновление раз в неделю, примеры запросов и конкуренты-источники. Кликов нет. Учитываются только запросы, где сайт уже высоко.",
+  us:"Единственная официальная метрика «видит ли нас ИИ Яндекса». Включить в регулярный съём yandex-dannye."},
+ {t:"Трафик из нейросетей в РФ вырос вдвое, в авто первая – Алиса", fig:"+119%", f:["yes","ru"], rel:["вендор, выборка раскрыта","part"],
+  d:"30.09.2026 · UIS (коллтрекинг), ppc.world", u:"https://ppc.world/news/trafik-iz-neyrovydachi-vyros-bolee-chem-vdvoe-issledovanie/",
+  s:"2 443 клиента, 180 тыс. визитов, окт. 2025 – июль 2026. В авто: Алиса AI 39% переходов из нейросетей, ChatGPT 28%. Конверсия в обращение: нейросети 3,9%, SEO 2,8%, контекст 2,3%.",
+  us:"Под Алису оптимизируем не меньше, чем под ChatGPT. ИИ-визит ценнее, но объём пока мал."},
+ {t:"ИИ советует бренд, когда видит его собственную страницу", fig:"3% → 58%", f:["yes"], rel:["препринт, сверен","part"],
+  d:"19.09.2026 · arXiv 2609.23162", u:"https://arxiv.org/abs/2609.23162",
+  s:"34 960 наблюдений, GPT и Gemini, июнь–сентябрь 2026. Сайт компании не попал в источники ответа – бренд назван в 3–4% случаев. Попал – в 49–58%. Плюс брендовый подзапрос – 91–100%. Кого уже рекомендуют, того продолжают (80% против 2%). Наблюдение, не доказательство причины; данные вендора.",
+  us:"«Быстро попасть в ИИ» = страница «услуга × машина × город» с ценой и сроками, точно отвечающая на вопрос. Кто успел первым – держится."},
+ {t:"Google AI Mode называет тех, кто в топ-3 карт и с большим числом отзывов", fig:"54% vs 8%", f:["yes","loc"], rel:["вендор, малая выборка","part"],
+  d:"16–23.10.2026 · Whito, Великобритания", u:"https://whito.co.uk/research/uk-ai-visibility-index/",
+  s:"8 отраслей × 20 городов, 3 149 компаний. Из топ-3 карт – названы в 54% ответов, с мест 11–20 – в 8%. Медиана отзывов у названных 140, у остальных 61; рейтинг одинаковый, 4,9. Для мастеров ИИ опирается на агрегаторы.",
+  us:"Рейтинг – допуск, решает количество отзывов. В РФ роль агрегаторов – Яндекс Карты, 2ГИС, Авито Услуги, Профи, drive2."},
+ {t:"ChatGPT рекомендует 1,2% точек, карты Google – 36%", fig:"1,2%", f:["yes","loc"], rel:["вендор, только сети США","part"],
+  d:"январь 2026 (старше 3 мес.) · SOCi", u:"https://driven-metrics.com/blog/chatgpt-local-business-recommendation-rate-2026/",
+  s:"~350 тыс. точек сетевых брендов. ИИ гораздо избирательнее карт. Источники цитат: Google Maps 32,5%, нишевые сайты 26%, сайты брендов 23%.",
+  us:"Карты и каталоги – главное сырьё ИИ для локальных ответов."},
+ {t:"Разметка schema не поднимает ИИ-цитаты", fig:"±шум", f:["no"], rel:["контрольная группа","ok"],
+  d:"11.05.2026 (старше 3 мес.) · Ahrefs через SEJ", u:"https://www.searchenginejournal.com/schema-markup-didnt-move-ai-citations-in-ahrefs-test/574568/",
+  s:"1 885 страниц, добавивших JSON-LD, у каждой 3 контрольные. AI Overviews −4,6%, AI Mode и ChatGPT +2% – в пределах шума.",
+  us:"Schema ставим ради обычного поиска (rich results, LocalBusiness). Факты – видимым текстом."},
+ {t:"llms.txt не работает", fig:"97%", f:["no"], rel:["большая выборка","ok"],
+  d:"май–июнь 2026 · Ahrefs, SE Ranking", u:"https://ahrefs.com/blog/llmstxt-study/",
+  s:"137 тыс. доменов: 97% файлов за месяц не получили ни одного запроса. SE Ranking (~300 тыс. доменов): связи с цитированием нет. Google файл не использует.",
+  us:"Не тратить время и не продавать в КП. Если CMS ставит сама – пусть стоит."},
+ {t:"Спам-апдейт Google 24.09–08.10 – самый долгий в году", fig:"13 дней", f:["yes"], rel:["официально","ok"],
+  d:"Search Status Dashboard · 24.10.2026", u:"https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history",
+  s:"Core-апдейты – март и май, после мая не было. Спам: март, июнь, август, сентябрь. 15.10 Google объявил больше ссылок в AI Mode и AI Overviews и тест блока «официальные сайты».",
+  us:"Просадки в GSC за 24.09–08.10 сверять с этим окном. Без городских клонов и покупных ссылок."},
+ {t:"CTR первой позиции при AI Overviews падает, но цитата спасает", fig:"−58%", f:["yes"], rel:["старше 3 мес.","part"],
+  d:"февраль–апрель 2026 · Ahrefs, Seer", u:"https://seerinteractive.com/insights/aio-impact-on-google-ctr-2026-update",
+  s:"Ahrefs: CTR первой позиции при AIO −58%. Seer (5,47 млн запросов): частичный откат падения; процитированный в AIO сайт получает примерно +120% кликов к непроцитированному. SparkToro: 68% поисков в США без клика.",
+  us:"Для локального бизнеса «без клика» ≠ «без заявки»: звонок из карточки – тоже zero-click. Считать звонки, а не только визиты."},
+];
+const list=document.getElementById("list");
+const tags={yes:["берём","ok"],no:["не тратим время","bad"],ru:["Россия","acc"],loc:["локальный","acc"]};
+B.forEach(b=>{const d=document.createElement("article");d.className="b";d.dataset.f=b.f.join(" ");
+ d.innerHTML=`<div>${b.f.map(f=>`<span class="tag ${tags[f][1]}">${tags[f][0]}</span>`).join("")}<span class="tag ${b.rel[1]}">${b.rel[0]}</span></div>
+ <div class="fig">${b.fig}</div><h3>${b.t}</h3><div class="meta">${b.d} · <a href="${b.u}" target="_blank" rel="noopener">источник</a></div>
+ <p class="small" style="margin-top:8px">${b.s}</p><div class="us"><b>Для нас:</b> ${b.us}</div>`;list.appendChild(d);});
+document.getElementById("fl").addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;
+ document.querySelectorAll("#fl .chip").forEach(x=>x.setAttribute("aria-pressed",x===c));
+ list.querySelectorAll(".b").forEach(a=>a.hidden=!(c.dataset.f==="all"||a.dataset.f.split(" ").includes(c.dataset.f)));});
+</script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

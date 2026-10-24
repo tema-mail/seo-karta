@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ru" data-root="../" data-page="skhema/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Схема SEO</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.layers{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.chip .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.chip[aria-pressed="true"] .dot{background:#fff!important}
+.scen{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 14px}
+.scen select{font:inherit;font-size:14px;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg);max-width:100%}
+.mapbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px;position:relative}
+svg#map{width:100%;height:auto;display:block}
+.n rect{fill:var(--surface);stroke:var(--line);stroke-width:1.4;transition:opacity .2s,stroke .2s}
+.n text{fill:var(--fg);font:600 15px var(--f-body);pointer-events:none}
+.n .bar{stroke:none}
+.n{cursor:pointer}
+.n:hover rect.box,.n:focus rect.box{stroke:var(--accent);stroke-width:2}
+.n.sel rect.box{stroke:var(--accent);stroke-width:3}
+.n.dim{opacity:.18}
+.n.onpath rect.box{stroke:var(--accent);stroke-width:2.4}
+.n.now rect.box{fill:var(--accent-soft);stroke:var(--accent);stroke-width:3}
+.n .stepn{fill:var(--accent);font:700 11px var(--f-mono)}
+.e{fill:none;stroke:var(--line);stroke-width:1.6;transition:opacity .2s}
+.e.dim{opacity:.12}
+.e.hot{stroke:var(--accent);stroke-width:2.6}
+.e.loop{stroke-dasharray:6 5}
+.band{fill:var(--muted);font:600 13px var(--f-mono);letter-spacing:.08em;text-transform:uppercase}
+.split{display:grid;grid-template-columns:1fr 340px;gap:14px;align-items:start}
+.side{position:sticky;top:72px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;max-height:calc(100vh - 90px);overflow:auto}
+.side h3{font-family:var(--f-display);font-size:19px;margin:0 0 6px}
+.side h4{font-size:12px;font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:14px 0 4px}
+.side p{font-size:15px}
+.side .ex{background:var(--accent-soft);border-radius:10px;padding:10px 12px;font-size:14px}
+.walk{display:flex;gap:8px;margin-top:12px}
+.list{display:none}
+.list .stage{margin:18px 0 8px;font:600 12px var(--f-mono);text-transform:uppercase;color:var(--muted);letter-spacing:.06em}
+.list button{display:block;width:100%;text-align:left;font:inherit;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:10px;padding:12px 14px;margin:6px 0;color:var(--fg);cursor:pointer}
+.list button.dim{opacity:.35}
+.list button.now{background:var(--accent-soft);border-color:var(--accent)}
+.list button small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+@media (max-width:980px){.split{grid-template-columns:1fr}.side{position:static;max-height:none}}
+@media (max-width:760px){.mapbox{display:none}.list{display:block}}
+</style>
+</head>
+<body>
+<main class="wrap" style="--max:1560px">
+<header class="hero">
+  <div class="kicker">Схема · как работает поиск от спроса до денег</div>
+  <h1>Как SEO, AEO и GEO превращаются в заявки</h1>
+  <p class="lead">Нажмите на любой блок – справа объяснение, что там происходит, что делаем мы и кто у нас за это отвечает. Слои подсвечивают, какие блоки относятся к классическому SEO, к ответам ИИ, к картам и к конверсии. Внизу – три живых примера, их можно пройти по шагам.</p>
+</header>
+
+<div class="layers" id="layers"></div>
+<div class="scen">
+  <label for="sc" class="small muted">Пример:</label>
+  <select id="sc"></select>
+  <button class="btn" id="go">Пройти путь по шагам</button>
+  <button class="btn ghost" id="reset">Сбросить</button>
+</div>
+
+<div class="split">
+  <div>
+    <div class="mapbox"><svg id="map" viewBox="0 0 1224 486" role="img" aria-label="Схема SEO от спроса до сделки"></svg></div>
+    <div class="list" id="list"></div>
+  </div>
+  <aside class="side" id="side" aria-live="polite"></aside>
+</div>
+
+<h2>Как читать схему</h2>
+<div class="grid g3">
+  <div class="card"><h3>Слева – подготовка</h3><p class="small">Сначала выясняем, что люди ищут (включая скрытый спрос), раскладываем это по страницам и пишем страницу на фактах клиента. Без этого всё остальное работает вхолостую.</p></div>
+  <div class="card"><h3>В середине – где нас видят</h3><p class="small">Поисковик обходит и индексирует страницу. Дальше – четыре витрины: выдача Яндекса, выдача Google, карты и ответы ИИ. Ссылки, упоминания и отзывы усиливают все четыре.</p></div>
+  <div class="card"><h3>Справа – деньги</h3><p class="small">Клик ничего не стоит, если страница не ведёт к заявке. Поэтому прочтение, микрошаг и звонок – такие же этапы SEO, как и позиции. Замер замыкает круг: смотрим, что дало деньги, и дорабатываем.</p></div>
+</div>
+</main>
+
+<script src="../assets/site.js"></script>
+<script>
+const LAYERS = {
+  seo:  ["SEO – выдача", "var(--l-seo)"],
+  aeo:  ["AEO – прямые ответы", "var(--l-aeo)"],
+  geo:  ["GEO – ответы ИИ", "var(--l-geo)"],
+  loc:  ["Локальное – карты", "var(--l-loc)"],
+  conv: ["Конверсия в лид", "var(--l-conv)"],
+  ext:  ["Внешние сигналы", "var(--l-ext)"],
+};
+const STAGES = ["Спрос", "Карта страниц", "Страница", "Индекс и сигналы", "Где нас видят", "Заход", "Деньги"];
+
+// c – колонка, r – ряд
+const N = [
+  {id:"spros", c:0,r:0, t:"Спрос", L:["seo","aeo","geo"],
+   how:"Что и сколько люди ищут: частоты Wordstat, подсказки, запросы из Вебмастера и Search Console. Важна не частота, а намерение: «купить/заказать/цена/рядом» – коммерция, «как/почему» – информация.",
+   we:"Собираем запросы по услугам, маркам, моделям и симптомам; режем на группы по общей выдаче (если у запросов 3+ общих сайта в топ-10 – это одна страница).",
+   who:"teyes-seo-sbor (для TEYES), бренд-анализ-спрос, позже – отдельный агент кластеризации",
+   m:"Частота за месяц с датой съёма, доля коммерческих запросов",
+   bad:"Брать запросы с частотой «потому что есть» и делать под каждый страницу."},
+  {id:"skryt", c:0,r:1, t:"Скрытый спрос", L:["seo","aeo"],
+   how:"Человек ищет не то, что мы продаём, а свою боль: «русификация Li L9», «не работает CarPlay», «ошибка батареи Zeekr». Конкуренты эти запросы не видят – а клиент уже готов платить.",
+   we:"Находим смежные боли, бренды-входы и симптомы; делаем страницу-вход, которая решает задачу и мостом ведёт к основной услуге.",
+   who:"seo-lead + маркетолог; кандидат в отдельного агента «скрытый спрос»",
+   m:"Заявки со страниц-входов, доля «пришёл за одним – купил другое»",
+   bad:"Страница-вход, которая не решает исходную задачу, а сразу продаёт – отказ и потеря доверия."},
+  {id:"konkur", c:0,r:2, t:"Конкуренты\nи выдача", L:["seo","geo"],
+   how:"Кто стоит в топе и в ответах ИИ по нашим запросам: агрегаторы, сайты конкурентов, карты. По типу страниц в топе видно, что поисковик считает правильным ответом.",
+   we:"Снимаем выдачу по каждой группе, смотрим тип страниц-победителей (услуга, каталог, статья) и что у них есть, чего нет у нас.",
+   who:"бренд-сбор-выдача, бренд-анализ-конкуренты; позже – агент разбора выдачи",
+   m:"Доля топ-10 у агрегаторов, тип страницы в топе",
+   bad:"Делать статью, когда в топе сплошь страницы услуг (и наоборот)."},
+  {id:"baza", c:0,r:3, t:"База фактов\nклиента", L:["aeo","geo","conv"],
+   how:"Цены, сроки, гарантия, адрес, фото работ, кейсы, сертификаты, ответы мастеров. ИИ и Яндекс любят проверяемые факты – их нельзя придумать.",
+   we:"Собираем у клиента один раз в базу; страница пишется только на ней, чего нет – ставим «уточнить», а не выдумываем.",
+   who:"бренд-интервьюер, marketolog; станция «Знакомство» в заводе",
+   m:"Доля страниц с уникальными фактами (цена, кейс, фото)",
+   bad:"Текст «опытные мастера, индивидуальный подход» – ни одного факта, ни для человека, ни для ИИ."},
+  {id:"karta", c:1,r:0, t:"Карта страниц\n(URL Master)", L:["seo"],
+   how:"Одна группа запросов – одна страница с понятным адресом в иерархии: /uslugi/rusifikaciya/li-auto-l9. Это защищает от дублей и от того, что две страницы воюют за один запрос.",
+   we:"Ведём реестр «группа → URL → действие (создать / доработать / склеить / не делать)».",
+   who:"site-map (адреса), seo-lead (решение), site-seo (интент)",
+   m:"Каждая группа закреплена ровно за одним URL",
+   bad:"Конвейер без карты страниц – 431 статья Teyes, из них 305 почти одинаковые."},
+  {id:"kanib", c:1,r:1, t:"Порог и\nканнибализация", L:["seo"],
+   how:"Страница имеет право на жизнь, только если у неё свой спрос и своя польза. Ниже порога – раздел на родительской странице. Две страницы на один запрос делят вес и обе проседают.",
+   we:"Порог – от 20 запросов в месяц и своя польза; скрипт проверки пересечений ключей между страницами.",
+   who:"seo-lead (references/porogi.md)",
+   m:"Пересечений ключей между страницами – 0",
+   bad:"Страница под каждый город без офиса там – дорвей, санкции Яндекса и Google."},
+  {id:"stranica", c:2,r:0, t:"Страница\n(ответ сразу)", L:["seo","aeo","geo","conv"],
+   how:"Сверху – прямой ответ на запрос в 2–5 предложениях, дальше цена, сроки, как проходит работа, доказательства, FAQ и кнопка. Каждый блок понятен отдельно – ИИ вырезает именно блоки.",
+   we:"Пишем по базе фактов, title/H1/описание под главный запрос, блоки под подзапросы, призыв на каждом экране.",
+   who:"marketolog + copywriting (текст), site-seo (мета и заголовки), site-lead (вёрстка)",
+   m:"Время на странице, доскролл, конверсия страницы",
+   bad:"Длинная «SEO-простыня», где цена и кнопка на пятом экране."},
+  {id:"tech", c:2,r:1, t:"Техника сайта", L:["seo"],
+   how:"Одно зеркало, https, robots и sitemap, canonical, скорость на телефоне, 404 с кодом 404, нет битых ссылок. Пока техника кривая, новые страницы стоят в мёртвой очереди.",
+   we:"Проверяем до контента, а не после.",
+   who:"site-tech",
+   m:"Страниц в индексе / страниц в sitemap, Core Web Vitals",
+   bad:"Главное зеркало в Яндексе – http, сайт на https: индексация стоит месяцами."},
+  {id:"perelink", c:2,r:2, t:"Перелинковка", L:["seo","conv"],
+   how:"Ссылки внутри сайта показывают поисковику, какие страницы главные, и ведут человека от статьи к услуге. Хаб марки → модели → услуги; статья → услуга.",
+   we:"Хабы и обязательный мост из каждой инфо-страницы в коммерческую.",
+   who:"site-seo; в Codex есть internal-linking-planner (перенести)",
+   m:"Страниц без входящих ссылок – 0; переходы статья → услуга",
+   bad:"Статья-сирота: трафик есть, переходов к услуге нет."},
+  {id:"razmetka", c:2,r:3, t:"Разметка\nи сущности", L:["aeo","geo","loc"],
+   how:"Schema.org (LocalBusiness, Service, Product, FAQ, Review), одинаковые название-адрес-телефон везде. Помогает машинам понять, кто вы, где и что делаете.",
+   we:"Разметка по типу страницы, единый NAP на сайте, картах и справочниках.",
+   who:"site-seo; в Codex есть schema (перенести)",
+   m:"Ошибок валидатора – 0; NAP совпадает на всех площадках",
+   bad:"На сайте один телефон, в 2ГИС другой, в Яндексе третий – ИИ не уверен, что это одна компания."},
+  {id:"index", c:3,r:0, t:"Обход и индекс", L:["seo"],
+   how:"Робот должен найти страницу, скачать её и решить включить в индекс. Яндекс может держать страницу в «недостаточно качественных» – тогда её нет в выдаче.",
+   we:"Sitemap, переобход через Вебмастер, контроль статусов страниц.",
+   who:"yandex-dannye (Вебмастер); Google – ничей; в Codex есть yandex-webmaster-recrawl",
+   m:"В индексе / отправлено, срок попадания",
+   bad:"Обещать рост от переобхода – это только приглашение роботу."},
+  {id:"ssylki", c:3,r:1, t:"Ссылки\nи площадки", L:["ext","seo"],
+   how:"Внешние ссылки – голос доверия. Для локального бизнеса важнее не биржевые ссылки, а профили на картах, справочниках, отраслевых площадках и живые посты в сообществах.",
+   we:"Реестр площадок по уровням, проверка доноров, статьи под правила каждой площадки.",
+   who:"нет исполнителя – заводим агентов (см. «Ссылки и площадки»)",
+   m:"Живые ссылки с трафиком, переходы с площадок",
+   bad:"Закупить 200 ссылок со спам-сайтов – фильтр и потеря позиций."},
+  {id:"upom", c:3,r:2, t:"Упоминания\nбренда", L:["ext","geo"],
+   how:"ИИ рекомендует тех, о ком говорят в разных местах: обзоры, форумы, рейтинги, статьи, чаты. Даже без ссылки упоминание «TEYES Sibir в Новосибирске ставит…» работает на ответы ИИ.",
+   we:"Посты и ответы в тематических сообществах, участие в подборках и рейтингах, кейсы на drive2/VC/Дзене.",
+   who:"нет исполнителя – кандидат в агента «видимость в ИИ»",
+   m:"Сколько раз бренд назван в ответах ИИ по нашим запросам",
+   bad:"Накрутка фейковых упоминаний и отзывов – бан площадок и юридический риск."},
+  {id:"otzyvy", c:3,r:3, t:"Отзывы\nи карточки", L:["ext","loc","geo"],
+   how:"Карточка в Яндекс Картах и 2ГИС с фото, услугами, ценами и свежими отзывами – главный локальный сигнал. Ответы на отзывы тоже читают и люди, и ИИ.",
+   we:"Заполняем карточки полностью, просим отзыв после каждой работы, отвечаем на все.",
+   who:"нет исполнителя – кандидат в агента «карты и отзывы» (станция в заводе v2)",
+   m:"Рейтинг, число и свежесть отзывов, звонки и маршруты с карт",
+   bad:"Купленные отзывы – карточку понижают или удаляют."},
+  {id:"yandex", c:4,r:0, t:"Выдача Яндекса", L:["seo","aeo"],
+   how:"Главная выдача в РФ. Сверху – ответ Алисы AI (бывший Нейро) и колдунщики, ниже – реклама, карты, органика. Яндекс сильно смотрит на поведение: вернулся ли человек в выдачу.",
+   we:"Страница под интент, быстрый ответ сверху, понятный путь к заявке.",
+   who:"yandex-dannye (позиции и запросы), XMLRiver – только по слову владельца",
+   m:"Показы, клики, CTR, средняя позиция по группам",
+   bad:"Смотреть только на позицию: можно стоять первым под ответом Алисы и не получать кликов."},
+  {id:"google", c:4,r:1, t:"Выдача Google", L:["seo","aeo"],
+   how:"В РФ меньше доля, но важен для «технарей» и для ИИ: многие ИИ-ассистенты опираются на индекс Google и Bing. AI Overviews забирают часть кликов с инфо-запросов.",
+   we:"Search Console, разметка, скорость, сущности.",
+   who:"ничей участок: seo-lead отдаёт GSC агенту yandex-dannye, а тот в описании пишет «не для GSC» – чиним",
+   m:"Клики и показы GSC, доля запросов с AI Overviews",
+   bad:"Игнорировать Google, потому что «в РФ все в Яндексе» – теряем источник для ИИ."},
+  {id:"karty", c:4,r:2, t:"Карты\n(Яндекс, 2ГИС)", L:["loc"],
+   how:"По запросам «рядом / в Новосибирске» первым идёт блок карт. Человек часто звонит прямо из карточки, не заходя на сайт.",
+   we:"Полная карточка, рубрики, услуги с ценами, фото, отзывы, ссылка на сайт.",
+   who:"нет исполнителя – агент «карты и отзывы»",
+   m:"Звонки, маршруты, переходы на сайт из карточки",
+   bad:"Карточка без цен и фото: в выдаче карт выигрывают заполненные."},
+  {id:"ai", c:4,r:3, t:"Ответы ИИ\n(Алиса, ChatGPT)", L:["geo","aeo"],
+   how:"ИИ собирает ответ из нескольких источников и называет компании. Рекомендует тех, кого видит в разных местах с одинаковыми фактами: сайт, карты, отзывы, упоминания.",
+   we:"Ответ сразу на странице, проверяемые факты, единый NAP, упоминания на внешних площадках, регулярная проверка «кого ИИ советует по нашим запросам».",
+   who:"нет исполнителя – кандидат в агента «видимость в ИИ»; в Codex есть ai-seo",
+   m:"Доля ответов, где назван бренд; ссылки на сайт в ответах",
+   bad:"Ставить llms.txt и разметку «для ИИ»: по замерам 2026 (Ahrefs) ни то, ни другое цитаты не поднимает."},
+  {id:"klik", c:5,r:0, t:"Клик и заход", L:["seo","conv"],
+   how:"Человек увидел сниппет и кликнул. На это влияют title, описание, быстрые ссылки, цена в сниппете, рейтинг.",
+   we:"Сниппет с ценой и выгодой, а не перечислением ключей.",
+   who:"site-seo",
+   m:"CTR по группам запросов",
+   bad:"Title из пяти ключей через запятую."},
+  {id:"prochten", c:5,r:1, t:"Прочтение\nи доверие", L:["conv"],
+   how:"Первые 5 секунд: тот ли это ответ, сколько стоит, можно ли доверять. Фото реальных работ, цена «от», сроки, гарантия, отзывы рядом с кнопкой.",
+   we:"Ответ и цена на первом экране, доказательства до призыва.",
+   who:"marketolog, site-landing (проверка)",
+   m:"Доскролл до блока цены, отказы",
+   bad:"Красивый первый экран без ответа на вопрос из запроса."},
+  {id:"micro", c:5,r:2, t:"Микрошаг", L:["conv"],
+   how:"Не все готовы сразу оставить заявку. Квиз «подберём под вашу машину», калькулятор цены, «пришлите фото – скажем цену», кнопка в мессенджер.",
+   we:"Минимум один микрошаг на каждой странице, особенно на инфо-страницах.",
+   who:"marketolog (лид-магниты), site-forms (проверка)",
+   m:"Конверсия в микрошаг, доля дошедших до заявки",
+   bad:"Единственная форма «Оставьте заявку» внизу статьи."},
+  {id:"zvonok", c:5,r:3, t:"Звонок с карт\nили из ИИ", L:["loc","geo","conv"],
+   how:"Часть клиентов приходит без сайта: позвонил из карточки, нашёл телефон в ответе ИИ, написал в мессенджер. Это тоже результат SEO, но его не видно в Метрике.",
+   we:"Отдельные номера или метки, вопрос «откуда о нас узнали» в CRM.",
+   who:"prodavec (скрипт вопроса), CRM",
+   m:"Звонки с карт, ответы «посоветовал ИИ / нашёл в Яндексе»",
+   bad:"Считать SEO только по заявкам с сайта – занижаем результат."},
+  {id:"lid", c:6,r:0, t:"Лид", L:["conv"],
+   how:"Заявка, звонок, сообщение. С этого места SEO можно мерить деньгами.",
+   we:"Цели Метрики на каждую форму и кнопку, страница входа у каждой заявки.",
+   who:"site-forms, метрика-для-админки",
+   m:"Лиды с поиска по страницам входа",
+   bad:"Цели не настроены – непонятно, какая страница приносит заявки."},
+  {id:"sdelka", c:6,r:1, t:"Сделка\nи деньги", L:["conv"],
+   how:"Лид – ещё не деньги. Скорость ответа, первая фраза менеджера и следующий шаг решают больше, чем позиция.",
+   we:"Скрипт после заявки, связка заявка → сделка в CRM.",
+   who:"prodavec",
+   m:"Конверсия лид → сделка, средний чек, выручка с поиска",
+   bad:"Хорошая страница, но ответ через 3 часа – лид ушёл к конкуренту."},
+  {id:"zamer", c:6,r:2, t:"Замер", L:["seo","geo","conv"],
+   how:"Метрика (визиты, цели, страницы входа), Вебмастер и GSC (запросы, показы, индекс), CRM (сделки), ручная проверка ответов ИИ.",
+   we:"Цифры с датой и источником; «не собрано» не равно нулю.",
+   who:"yandex-dannye, teyes-seo-otchet, admin-builder (раздел метрики)",
+   m:"Выручка с органики и карт по месяцам",
+   bad:"Отчёт «позиции растут» без заявок и денег."},
+  {id:"dorabotka", c:6,r:3, t:"Доработка", L:["seo","geo","conv"],
+   how:"Страницы с показами без кликов – чиним сниппет. С кликами без заявок – чиним страницу. Без показов – смотрим индекс и спрос. Новые запросы из Вебмастера – обратно в спрос.",
+   we:"Раз в месяц – список «что поднимать дальше» от seo-lead.",
+   who:"seo-lead",
+   m:"Число доработанных страниц и их прирост",
+   bad:"Только писать новое и никогда не возвращаться к старому."},
+];
+const E = [
+  ["spros","karta"],["skryt","karta"],["konkur","karta"],["karta","kanib"],["kanib","stranica"],["baza","stranica"],
+  ["stranica","tech"],["stranica","perelink"],["stranica","razmetka"],["tech","index"],["stranica","index"],["perelink","index"],
+  ["razmetka","ai"],["index","yandex"],["index","google"],["ssylki","yandex"],["ssylki","google"],["upom","ai"],
+  ["otzyvy","karty"],["otzyvy","ai"],["yandex","klik"],["google","klik"],["ai","klik"],["ai","zvonok"],["karty","zvonok"],
+  ["klik","prochten"],["prochten","micro"],["micro","lid"],["zvonok","lid"],["lid","sdelka"],["sdelka","zamer"],["zamer","dorabotka"],
+  ["dorabotka","spros","loop"],
+];
+const SC = {
+  teyes: {name:"TEYES Sibir – скрытый спрос: русификация → новая магнитола",
+    path:["skryt","karta","kanib","stranica","index","yandex","klik","prochten","micro","lid","sdelka","zamer","dorabotka"],
+    ex:{
+      skryt:"Человек пишет «русификация Li Auto L9 Новосибирск». Он не ищет магнитолу – он хочет понятное меню. Конкуренты по «мультимедиа» этот запрос не видят.",
+      karta:"Группа «русификация Li L9» → /uslugi/rusifikaciya/li-auto-l9/, родитель – хаб русификации, сосед – страница «Teyes на Li L9».",
+      kanib:"Проверяем, что «русификация Li L9» не стоит уже на странице магнитолы. Если спрос ниже 20 – это раздел на хабе марки, не отдельная страница.",
+      stranica:"Сверху: «Русифицируем меню и навигацию Li L9 за N часов, цена от …» (цифры – из базы TEYES). Ниже – что останется на китайском и вариант «заменить головное устройство на Teyes – всё на русском и Android».",
+      index:"Страница в sitemap, отправлена на переобход в Вебмастере.",
+      yandex:"Стоим по «русификация Li L9» и соседним формулировкам; конкуренты-установщики там не работают.",
+      klik:"Сниппет: «Русификация Li L9 в Новосибирске – цена от …, за 1 день».",
+      prochten:"Человек видит фото своей машины до/после и честное «что не русифицируется».",
+      micro:"Кнопка «Пришлите фото панели – скажем, что можно сделать» в Telegram.",
+      lid:"Пишет в мессенджер, мастер по фото предлагает два варианта: русификация или Teyes.",
+      sdelka:"Часть клиентов берёт замену магнитолы – сколько именно, покажет пометка в CRM.",
+      zamer:"В CRM помечаем «пришёл за русификацией → купил Teyes» – так видна ценность скрытого спроса.",
+      dorabotka:"Запросы из Вебмастера по другим моделям (Zeekr, Voyah) – новые группы в спрос."}},
+  ev: {name:"EV Sibir – чтобы ИИ советовал компанию по ремонту электромобилей",
+    path:["baza","stranica","razmetka","otzyvy","upom","ai","zvonok","lid","sdelka","zamer"],
+    ex:{
+      baza:"Собираем факты: какие марки ремонтируют, оборудование, сроки диагностики батареи, гарантия, фото работ, адрес.",
+      stranica:"Страница «Ремонт высоковольтной батареи Zeekr 001» с ответом сверху, ценой диагностики и кейсом.",
+      razmetka:"AutoRepair + Service + FAQ, одинаковые название, адрес и телефон на сайте, в Яндекс Картах и 2ГИС.",
+      otzyvy:"После каждой работы – просьба об отзыве с упоминанием марки: «поменяли модуль батареи на Zeekr».",
+      upom:"Кейс на drive2 в сообществе владельцев Zeekr, ответ в Telegram-чате владельцев электромобилей Новосибирска по правилам чата.",
+      ai:"Спрашиваем Алису и ChatGPT «где в Новосибирске отремонтировать батарею Zeekr» – раз в месяц фиксируем, назван ли EV Sibir.",
+      zvonok:"Человек звонит по номеру из ответа ИИ или из карточки, сайт может даже не открыть.",
+      lid:"В CRM – источник «ИИ / карты» по вопросу «откуда узнали».",
+      sdelka:"Диагностика → ремонт.",
+      zamer:"Доля ответов ИИ с упоминанием бренда по 20 контрольным вопросам, звонки с карт."}},
+  info: {name:"Инфо-статья (модель Васина) – и как довести её до заявки",
+    path:["spros","konkur","karta","stranica","perelink","index","google","klik","prochten","micro","lid","zamer"],
+    ex:{
+      spros:"Запрос «почему магнитола не видит камеру заднего вида» – информационный, частый, по всей России.",
+      konkur:"В топе – статьи и форумы, а не страницы услуг. Значит, нужен формат статьи.",
+      karta:"/blog/kamera-zadnego-vida-ne-rabotaet/ – одна статья на группу, без дублей.",
+      stranica:"Ответ сразу: 5 причин и как проверить самому. Честно – большую часть можно проверить без сервиса.",
+      perelink:"Из статьи – ссылки на «установка камеры» и «Teyes с поддержкой камеры», из хаба – обратно на статью.",
+      index:"Статья в sitemap и в рубрике блога.",
+      google:"Статья ранжируется, но часть кликов съедает AI Overview – цитирование в нём тоже засчитываем.",
+      klik:"Заходят люди со всей страны – большинство не из Новосибирска.",
+      prochten:"Человек дочитал, проблема не решилась сама.",
+      micro:"Блок «не получилось? пришлите видео – подскажем бесплатно», для Новосибирска – запись на диагностику. Без этого шага статья даёт трафик, но не лиды.",
+      lid:"Заявки в основном местные; федеральный трафик – узнаваемость и ссылки.",
+      zamer:"Смотрим не визиты статьи, а переходы статья → услуга и заявки по странице входа."}},
+};
+
+const W=152,H=64,CX=172,X0=20,Y0=70,RY=96;
+const pos = id => { const n=N.find(x=>x.id===id); return {x:X0+n.c*CX, y:Y0+n.r*RY}; };
+const svg = document.getElementById("map"), NS="http://www.w3.org/2000/svg";
+const el = (t,a,p) => { const e=document.createElementNS(NS,t); for(const k in a) e.setAttribute(k,a[k]); (p||svg).appendChild(e); return e; };
+
+STAGES.forEach((s,i)=> el("text",{x:X0+i*CX+4,y:40,class:"band"}).textContent=s);
+const gE = el("g",{}), gN = el("g",{});
+const edgeEls = E.map(([a,b,k])=>{
+  const A=pos(a),B=pos(b); let d;
+  if(k==="loop"){ d=`M${A.x+W/2},${A.y+H} V${A.y+H+30} H${B.x+W/2-60} Q${X0-10},${A.y+H+30} ${X0-10},${A.y+H} V${B.y+H/2} H${B.x}`; }
+  else if(A.x===B.x){ d=`M${A.x+W/2},${A.y+H} V${B.y}`; }
+  else { const x1=A.x+W,y1=A.y+H/2,x2=B.x,y2=B.y+H/2,m=(x1+x2)/2; d=`M${x1},${y1} C${m},${y1} ${m},${y2} ${x2},${y2}`; }
+  const p = el("path",{d,class:"e"+(k==="loop"?" loop":""),"marker-end":"url(#ar)"},gE); p.dataset.a=a; p.dataset.b=b; return p;
+});
+const defs = el("defs",{}); const mk = el("marker",{id:"ar",viewBox:"0 0 10 10",refX:"9",refY:"5",markerWidth:"6",markerHeight:"6",orient:"auto-start-reverse"},defs);
+el("path",{d:"M0,0 L10,5 L0,10 z",fill:"var(--muted)"},mk);
+
+const nodeEls = {};
+N.forEach(n=>{
+  const {x,y}=pos(n.id);
+  const g = el("g",{class:"n",tabindex:"0",role:"button","aria-label":n.t.replace("\n"," ")},gN);
+  el("rect",{x,y,width:W,height:H,rx:10,class:"box"},g);
+  n.L.forEach((l,i)=> el("rect",{x:x+10+i*14,y:y+H-9,width:10,height:4,rx:2,class:"bar",fill:LAYERS[l][1]},g));
+  const lines=n.t.split("\n"), tx=el("text",{x:x+11,y:y+(lines.length>1?25:37)},g);
+  lines.forEach((ln,i)=>{ const s=el("tspan",{x:x+11,dy:i?19:0},tx); s.textContent=ln; });
+  const st = el("text",{x:x+W-10,y:y+16,"text-anchor":"end",class:"stepn"},g);
+  g.addEventListener("click",()=>select(n.id)); g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();select(n.id);}});
+  nodeEls[n.id]={g,st};
+});
+
+// мобильный список
+const list = document.getElementById("list"), listBtns = {};
+STAGES.forEach((s,ci)=>{
+  const h=document.createElement("div"); h.className="stage"; h.textContent=(ci+1)+". "+s; list.appendChild(h);
+  N.filter(n=>n.c===ci).forEach(n=>{
+    const b=document.createElement("button"); b.style.borderLeftColor=LAYERS[n.L[0]][1];
+    const outs=E.filter(e=>e[0]===n.id).map(e=>N.find(x=>x.id===e[1]).t.replace("\n"," "));
+    b.innerHTML=n.t.replace("\n"," ")+(outs.length?"<small>→ "+outs.join(", ")+"</small>":"");
+    b.addEventListener("click",()=>{select(n.id);document.getElementById("side").scrollIntoView({behavior:"smooth"});});
+    list.appendChild(b); listBtns[n.id]=b;
+  });
+});
+
+// слои
+let layer=null;
+const lw=document.getElementById("layers");
+Object.entries(LAYERS).forEach(([k,[name,col]])=>{
+  const b=document.createElement("button"); b.className="chip"; b.setAttribute("aria-pressed","false");
+  b.innerHTML=`<span class="dot" style="background:${col}"></span>${name}`;
+  b.onclick=()=>{ layer = layer===k?null:k; lw.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b&&layer?"true":"false")); stopWalk(false); paint(); };
+  lw.appendChild(b);
+});
+
+// сценарии
+const sc=document.getElementById("sc");
+Object.entries(SC).forEach(([k,v])=>{const o=document.createElement("option");o.value=k;o.textContent=v.name;sc.appendChild(o);});
+let walk=null, cur=null;
+sc.onchange=()=>{ if(walk) startWalk(); else paint(); };
+document.getElementById("go").onclick=startWalk;
+document.getElementById("reset").onclick=()=>{ layer=null; lw.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed","false")); stopWalk(true); };
+
+function startWalk(){ layer=null; lw.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed","false")); walk={k:sc.value,i:0}; cur=SC[walk.k].path[0]; paint(); render(cur); }
+function stopWalk(clear){ walk=null; if(clear){cur=null;} paint(); render(cur); }
+function step(d){ const p=SC[walk.k].path; walk.i=Math.max(0,Math.min(p.length-1,walk.i+d)); cur=p[walk.i]; paint(); render(cur); }
+function select(id){ if(walk){ const i=SC[walk.k].path.indexOf(id); if(i>=0) walk.i=i; else walk=null; } cur=id; paint(); render(id); }
+
+function paint(){
+  const path = walk ? SC[walk.k].path : null;
+  N.forEach(n=>{
+    const {g,st}=nodeEls[n.id];
+    const inLayer = !layer || n.L.includes(layer);
+    const onPath = path && path.includes(n.id);
+    g.classList.toggle("dim", (layer && !inLayer) || (path && !onPath));
+    g.classList.toggle("onpath", !!onPath);
+    g.classList.toggle("now", n.id===cur && !!walk);
+    g.classList.toggle("sel", n.id===cur && !walk);
+    st.textContent = onPath ? (path.indexOf(n.id)+1) : "";
+    const b=listBtns[n.id]; b.classList.toggle("dim",(layer&&!inLayer)||(path&&!onPath)); b.classList.toggle("now",n.id===cur);
+  });
+  edgeEls.forEach(p=>{
+    const a=p.dataset.a,b=p.dataset.b;
+    let hot=false, dim=false;
+    if(path){ const ia=path.indexOf(a), ib=path.indexOf(b); hot = ia>=0 && ib===ia+1 && ib<=walk.i; dim = !(ia>=0&&ib>=0); }
+    else if(layer){ const na=N.find(x=>x.id===a), nb=N.find(x=>x.id===b); dim = !(na.L.includes(layer)&&nb.L.includes(layer)); }
+    else if(cur){ hot = a===cur||b===cur; }
+    p.classList.toggle("hot",hot); p.classList.toggle("dim",dim);
+  });
+}
+
+function render(id){
+  const side=document.getElementById("side");
+  if(!id){ side.innerHTML='<h3>Выберите блок</h3><p class="muted">Нажмите на любой прямоугольник схемы или запустите пример «Пройти путь по шагам».</p><h4>Цветные полоски</h4>'+Object.values(LAYERS).map(([n,c])=>`<div class="small"><span style="display:inline-block;width:18px;height:5px;border-radius:2px;background:${c};margin-right:8px;vertical-align:2px"></span>${n}</div>`).join(""); return; }
+  const n=N.find(x=>x.id===id);
+  const ex = SC[sc.value].ex[id];
+  let h=`<h3>${n.t.replace("\n"," ")}</h3><div>${n.L.map(l=>`<span class="tag" style="color:${LAYERS[l][1]}">${LAYERS[l][0]}</span>`).join("")}</div>`;
+  if(walk){ const p=SC[walk.k].path; h=`<div class="kicker">Шаг ${walk.i+1} из ${p.length}</div>`+h; }
+  if(ex) h+=`<h4>Пример</h4><div class="ex">${ex}</div>`;
+  h+=`<h4>Как это работает</h4><p>${n.how}</p><h4>Что делаем мы</h4><p>${n.we}</p><h4>Кто у нас отвечает</h4><p>${n.who}</p><h4>Чем мерим</h4><p>${n.m}</p><h4>Типичная ошибка</h4><p>${n.bad}</p>`;
+  if(walk) h+=`<div class="walk"><button class="btn ghost" onclick="step(-1)">← Назад</button><button class="btn" onclick="step(1)">Дальше →</button></div>`;
+  side.innerHTML=h;
+}
+paint(); render(null);
+</script>
+</body>
+</html>

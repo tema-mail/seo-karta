@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru" data-root="../" data-page="komanda/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Команда SEO</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.org{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.role{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--line);border-radius:12px;padding:14px 16px}
+.role.ok{border-left-color:var(--ok)}.role.part{border-left-color:var(--part)}.role.bad{border-left-color:var(--bad)}
+.role h3{margin:0 0 4px;font-size:16px}
+.role .area{font-size:12px;color:var(--muted);font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.05em}
+.role p{font-size:14px;margin:6px 0 0}
+.role[hidden]{display:none}
+.boss{background:var(--accent);color:#fff;border-radius:14px;padding:18px 20px;margin:10px 0 18px}
+.boss h3{margin:0 0 4px;color:#fff;font-family:var(--f-display)}
+.boss p{margin:0;opacity:.9;font-size:15px}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+  <div class="kicker">Ревизия · 24.10.2026</div>
+  <h1>Команда SEO: что есть, что взять из Codex, кого не хватает</h1>
+  <p class="lead">Прошёл все скиллы и агентов Claude и все SEO-скиллы Codex (только чтение). Итог: ядро есть, но половина участков, которые дают локальному бизнесу заявки, – карты, ссылки, видимость в ИИ, Google – ни за кем не закреплена.</p>
+</header>
+
+<div class="boss"><h3>seo-lead – главный по SEO</h3><p>Держит картину целиком, ставит задачи помощникам, сам цифры не собирает. Новый узкий агент – когда участок провалился второй раз.</p></div>
+
+<div class="tabs" data-group="f" role="tablist">
+  <button data-tab="all">Все участки</button>
+  <button data-tab="ok">Есть исполнитель</button>
+  <button data-tab="part">Частично</button>
+  <button data-tab="bad">Дыра</button>
+</div>
+<div class="org" id="org"></div>
+
+<div class="note bad"><b>Противоречие в правилах.</b> seo-lead отдаёт Google Search Console агенту <code>yandex-dannye</code>, а тот в описании пишет «Не для: Google Search Console». На деле за Google не отвечает никто. Чинить первым – это правка двух строк.</div>
+
+<h2>Что взять из Codex</h2>
+<p class="muted">У Codex SEO-агентов нет, только скиллы: шесть универсальных англоязычных (похоже на набор marketingskills) и свои под TEYES, SEO-пульт и контент-фабрику.</p>
+<div class="tabs" data-group="cx" role="tablist">
+  <button data-tab="take">Перенести (5)</button>
+  <button data-tab="merge">Влить в существующих (11)</button>
+  <button data-tab="no">Не брать (8)</button>
+</div>
+<div class="panel" data-group="cx" data-tab="take"><div class="tbl"><table>
+<tr><th>Скилл Codex</th><th>Во что превращаем</th><th>Почему</th></tr>
+<tr><td><code>ai-seo</code></td><td>агент «видимость в ИИ»</td><td>Замер ответов ИИ, паттерны цитирования, доступ ИИ-ботов. Дописать Алису и Нейро – в оригинале их нет.</td></tr>
+<tr><td><code>seo-semantic-core</code></td><td>агент «семантика и кластеры»</td><td>Кластеры по общей выдаче и решение по URL: создать / привязать / склеить / не делать. Сейчас это есть только для TEYES.</td></tr>
+<tr><td><code>internal-linking-planner</code></td><td>агент «перелинковка»</td><td>Граф ссылок, сироты, глубина. Нужно для EV, KitAccess (683 карточки), TEYES.</td></tr>
+<tr><td><code>article-portfolio-analytics</code></td><td>агент «почему статья не растёт»</td><td>Сравнение с 5+ похожими страницами по GSC, Вебмастеру, Метрике и CRM. Аналога нет.</td></tr>
+<tr><td><code>website-client-audit</code></td><td>скилл «клиентский SEO-аудит»</td><td>Разборы в seo-razbory каждый раз делаются заново. Нужен один порядок: реестр источников, отчёт простым языком и ТЗ по ролям.</td></tr>
+</table></div></div>
+<div class="panel" data-group="cx" data-tab="merge"><div class="tbl"><table>
+<tr><th>Скилл Codex</th><th>Куда</th><th>Что берём</th></tr>
+<tr><td><code>google-sitemap-signal</code>, <code>search-page-impressions</code></td><td>агент индексации / GSC</td><td>«Переобход Google» – это повторная отправка sitemap, а не Indexing API; «0 показов ≠ не проверено»</td></tr>
+<tr><td><code>yandex-webmaster-recrawl</code></td><td>yandex-dannye</td><td>«Переобход выполнен ≠ страница в индексе», квота</td></tr>
+<tr><td><code>seo-orchestrator-core</code></td><td>seo-lead</td><td>8 слоёв проверки страницы; OG, Schema и llms.txt – разные вещи</td></tr>
+<tr><td><code>programmatic-seo</code></td><td>seo-lead/porogi.md</td><td>Ограничители для шаблонных серий (хабы марок и моделей)</td></tr>
+<tr><td><code>seo-content-verifier</code>, <code>teyes-seo-release-gate</code></td><td>site-seo</td><td>Каждая фраза на странице – с доказательством; без «инвентаря ключей»</td></tr>
+<tr><td><code>schema</code></td><td>site-seo</td><td>Справочник примеров JSON-LD</td></tr>
+<tr><td><code>seo-audit</code></td><td>site-tech</td><td>JSON-LD, который вставляется скриптом, hreflang по надобности</td></tr>
+<tr><td><code>teyes-article-conversion-ux</code></td><td>site-lead/blog.md</td><td>4 роли призыва в статье: в тексте, по смыслу, в конце, липкий; события в Метрике. Это и есть «прочтение → лид»</td></tr>
+<tr><td><code>content-strategy</code></td><td>будущий агент контент-плана</td><td>Опоры и кластеры тем по стадиям покупки</td></tr>
+<tr><td><code>tilda-seo-administrator</code></td><td>агент «SEO на Тильде»</td><td>16 настроек SEO Тильды, запись только после «да»</td></tr>
+<tr><td><code>pbn-site-system-alexey-borovikov</code></td><td>справочники новых агентов</td><td>Сам скилл – система сеток сайтов (риск спама), не берём. Но внутри сильные правила: локальное SEO, кластеризация, цитируемость ИИ, контроль индексации</td></tr>
+</table></div></div>
+<div class="panel" data-group="cx" data-tab="no"><div class="tbl"><table>
+<tr><th>Скилл Codex</th><th>Почему не берём</th></tr>
+<tr><td><code>seo-content-orchestrator</code>, <code>service-article-structure</code></td><td>Тяжёлые, привязаны к Case Studio (её не трогаем)</td></tr>
+<tr><td><code>site-architecture</code></td><td>Дублирует site-map</td></tr>
+<tr><td><code>seo-landing-ux</code></td><td>Дублирует marketolog и site-landing</td></tr>
+<tr><td><code>seo-pulse-capability-router</code></td><td>Завязан на SEO-пульт; роутер – это таблица «Команда» у seo-lead</td></tr>
+<tr><td><code>course-knowledge-router</code></td><td>Карту курсов берём как источник для агента ссылок, сам скилл не нужен</td></tr>
+<tr><td><code>website-proofreader</code>, <code>publish-tilda-feed-article</code>, <code>tilda-publication-safety</code></td><td>Вычитка и выкладка в Тильду – не задачи SEO</td></tr>
+</table></div></div>
+
+<h2>Порядок</h2>
+<div class="grid g3">
+  <div class="card"><div class="num">1</div><h3>Правки правил</h3><p class="small">Закрыть противоречие по GSC. Вписать агентов <code>бренд-*</code> в таблицу «Команда» у seo-lead. Влить мелкие куски из Codex (переобход, разметка, программатик). Новых агентов на этом шаге нет.</p></div>
+  <div class="card"><div class="num">2</div><h3>Три агента, где уже болело</h3><p class="small">Семантика и кластеры, индексация Яндекс + Google, видимость в ИИ. Все три участка уже проваливались на TEYES и EV.</p></div>
+  <div class="card"><div class="num">3</div><h3>Блок «вне сайта»</h3><p class="small">Карты и отзывы, ссылки и площадки (три агента – см. «Ссылки и площадки»), потом перелинковка, аналитика статей, SEO на Тильде, клиентский аудит.</p></div>
+</div>
+<div class="note warn">Правило владельца – заводить агента, когда участок провалился второй раз, а не впрок. Шаг 2 этому соответствует. Шаг 3 – участки, где сейчас вообще никого нет, поэтому решение за владельцем: заводить сразу или ждать первого клиента.</div>
+</main>
+
+<script>
+const R = [
+  ["ok","Данные Яндекса","yandex-dannye","Метрика и Вебмастер по токену, переобход. «Не собрано» ≠ ноль."],
+  ["ok","Страница","site-seo","Интент, title, H1, FAQ, разметка, ответ в начале, проверка серий на одинаковость."],
+  ["ok","Техника","site-tech","robots, sitemap, canonical, зеркала, 301, 404, скорость, битые ссылки."],
+  ["ok","Адреса","site-map","Дерево страниц с ЧПУ и таблица 301 – до вёрстки."],
+  ["ok","TEYES: сбор и отчёт","teyes-seo-sbor · teyes-seo-otchet · teyes-seo-semantika","Спрос, позиции, разбор фраз – только для TEYES."],
+  ["ok","Исследование рынка","исследование-бренда + 16 агентов бренд-*","Выдача, конкуренты, отзывы, сайт, AEO/GEO – разово. В «Команде» seo-lead не указаны."],
+  ["part","Кластеризация","teyes-seo-semantika (только чистка)","Кластеров по выдаче и решения «страница / раздел / не делать» вне TEYES нет."],
+  ["part","Индексация","yandex-dannye","Нет регулярной очереди «не в индексе → почему → переобход». Google не покрыт."],
+  ["part","Конверсия статьи в лид","site-lead/blog.md (24 строки)","Нет ролей призыва, событий и анализа «статья → заявка»."],
+  ["part","Хабы и шаблонные серии","porogi.md","Только порог и проверка на одинаковость."],
+  ["part","Перелинковка","site-seo (2–5 ссылок)","Нет графа сайта, сирот, глубины."],
+  ["bad","Google Search Console","никто","Противоречие в правилах: seo-lead отдаёт yandex-dannye, тот отказывается."],
+  ["bad","Ссылки и площадки","никто","Нет ни у Claude, ни у Codex. Единственный материал – курс Маркина «Насос»."],
+  ["bad","Карты и отзывы","никто (разовый сбор в исследовании)","Полнота карточки, NAP, ответы на отзывы, динамика – никто не ведёт."],
+  ["bad","Видимость в ИИ","никто","Нет замера «советует ли нас ИИ» и его динамики."],
+  ["bad","Позиции вне TEYES","никто","XMLRiver вручную, снимки не хранятся."],
+  ["bad","Скрытый спрос","никто","Методики нет – см. страницу «Скрытый спрос»."],
+  ["bad","Клиентский аудит","никто","Каждый разбор заново, без единого порядка."],
+  ["bad","SEO на Тильде","никто (Tilda MCP есть)","Живые сайты на Тильде без исполнителя."],
+];
+const org=document.getElementById("org"), lab={ok:"есть",part:"частично",bad:"дыра"};
+R.forEach(([s,a,w,p])=>{const d=document.createElement("div");d.className="role "+s;d.dataset.s=s;
+ d.innerHTML=`<div class="area">${a}</div><h3>${w}</h3><span class="tag ${s}">${lab[s]}</span><p>${p}</p>`;org.appendChild(d);});
+document.addEventListener("click",e=>{const b=e.target.closest('.tabs[data-group="f"] button');if(!b)return;
+ org.querySelectorAll(".role").forEach(r=>r.hidden=!(b.dataset.tab==="all"||r.dataset.s===b.dataset.tab));});
+</script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

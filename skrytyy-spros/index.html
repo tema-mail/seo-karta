@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru" data-root="../" data-page="skrytyy-spros/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Скрытый спрос</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:16px 0}
+.flow .s{flex:1 1 160px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.flow .s b{display:block;font-family:var(--f-display);font-size:14px;margin-bottom:4px}
+.flow .arr{align-self:center;color:var(--accent);font-size:22px}
+@media (max-width:700px){.flow .arr{transform:rotate(90deg);width:100%;text-align:center}}
+.calc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.calc label{display:grid;grid-template-columns:200px 1fr 34px;gap:12px;align-items:center;margin:10px 0;font-size:15px}
+.calc input[type=range]{width:100%;accent-color:var(--accent)}
+.calc output{font:700 16px var(--f-mono);text-align:right}
+.score{font-family:var(--f-display);font-size:40px;color:var(--accent)}
+.verdict{padding:12px 16px;border-radius:10px;margin-top:8px;font-weight:600}
+@media (max-width:640px){.calc label{grid-template-columns:1fr 34px}.calc label span{grid-column:1/-1}}
+.types{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.ty{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.ty .q{font-family:var(--f-mono);font-size:13px;color:var(--accent);margin:6px 0}
+.ty h3{margin:0;font-size:15px}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+  <div class="kicker">Скрытый спрос · методика</div>
+  <h1>Забирать клиентов там, где конкуренты их не видят</h1>
+  <p class="lead">Человек не ищет то, что мы продаём. Он ищет свою боль: «русификация Li L9», «ошибка изоляции батареи», «букет на 1 сентября». Решение этой боли – наш продукт или дорога к нему. Конкуренция по таким запросам ниже, а намерение горячее: проблема и машина у человека уже есть.</p>
+</header>
+
+<h2>Как это работает у TEYES Sibir</h2>
+<div class="flow">
+  <div class="s"><b>Запрос</b>«русификация Zeekr 001 Новосибирск»</div><div class="arr">→</div>
+  <div class="s"><b>Страница-вход</b>Решает задачу: что русифицируется, цена, срок</div><div class="arr">→</div>
+  <div class="s"><b>Мост</b>Честное сравнение: русификация штатной системы или Teyes с русским Android</div><div class="arr">→</div>
+  <div class="s"><b>Продажа</b>Часть клиентов выбирает замену магнитолы – чек выше (долю покажет CRM)</div>
+</div>
+<div class="note bad"><b>Находка 24.10.2026 (проверил сам):</b> на странице <a href="https://teyes-sibir.ru/services/Russification_of_cars" target="_blank" rel="noopener">teyes-sibir.ru/services/Russification_of_cars</a> (от 50 000 ₽) слово Teyes есть только в шапке и меню. Моста «или поставьте Teyes – всё на русском» в тексте страницы нет. Спрос заходит, а дорога к основной продаже не построена. Это первое, что стоит доделать.</div>
+<div class="grid g2">
+  <div class="card"><h3>Второй приём – бренд как категория</h3><p class="small">Компания называется брендом производителя («TEYES Sibir», «официальный дилер Teyes в Сибири») и забирает весь спрос по бренду: «teyes cc3 установка», «teyes купить Новосибирск». Так же устроен StarLine: люди ищут «поставить старлайн», а не «поставить сигнализацию», и у производителя есть раздел <a href="https://store.starline.ru/centers/" target="_blank" rel="noopener">«Установочные центры»</a> – партнёр, связанный с брендом, получает этот спрос.</p></div>
+  <div class="card"><h3>Другие реальные примеры</h3><ul class="clean small">
+    <li><a href="https://www.rolf.ru/buyback/kia/k5/" target="_blank" rel="noopener">Рольф</a> – выкуп по маркам и моделям. Моста «выкуп → трейд-ин нового авто» на странице модели тоже нет – даже у лидера</li>
+    <li><a href="https://auto.ru/mag/article/car-buyback-autoru/" target="_blank" rel="noopener">Авто.ру</a> – статья журнала о выкупе ведёт в свой сервис выкупа</li>
+    <li><a href="https://ucsol.ru/rastamozhka/avto/ustanovka-i-podklyuchenie-k-gais-ehra-glonass" target="_blank" rel="noopener">Таможенный брокер</a> – обязательная ЭРА-ГЛОНАСС как вход в растаможку</li>
+    <li><a href="https://vkusvill.ru/goods/buket-na-1-sentyabrya-118-394774/" target="_blank" rel="noopener">ВкусВилл</a> – продуктовая сеть забирает цветочный повод «букет на 1 сентября»</li>
+    <li>Т-Ж и Халва Медиа – медиа банков забирают «платья на выпускной», «что надеть на свадьбу»</li>
+  </ul></div>
+</div>
+
+<h2>12 видов скрытого спроса</h2>
+<div class="tabs" data-group="n">
+  <button data-tab="all">Все</button><button data-tab="ev">Автосервис EV</button><button data-tab="ust">Установка</button><button data-tab="dealer">Автосалон</button><button data-tab="fl">Цветы</button><button data-tab="fit">Фитнес</button><button data-tab="shop">Одежда</button>
+</div>
+<div class="types" id="types"></div>
+
+<h2>Где искать</h2>
+<div class="tbl"><table>
+<tr><th>Источник</th><th>Что ищем</th><th>Как</th></tr>
+<tr><td>Wordstat «похожие» и «что ещё искали»</td><td>с чем рядом ищут наш продукт</td><td>вход не «магнитола», а «китайский язык», «русификация», «нет русского», «carplay» × марки</td></tr>
+<tr><td>Подсказки Яндекса и Google</td><td>хвосты «почему», «как», «не работает», «цена»</td><td>маска «марка + модель + *»</td></tr>
+<tr><td>drive2, форумы марок, Telegram-чаты владельцев</td><td>боли словами клиентов</td><td>выписывать вопросы и модели</td></tr>
+<tr><td>Отзывы – свои и конкурентов</td><td>«пришёл за X, сделали ещё Y»</td><td>агент бренд-сбор-отзывы</td></tr>
+<tr><td>Звонки и CRM</td><td>с чем пришёл против что купил</td><td>поле «повод обращения» – главный источник</td></tr>
+<tr><td>Вебмастер «Поисковые запросы»</td><td>запросы с показами без своей страницы</td><td>показы больше 20, позиция ниже 15 – кандидаты</td></tr>
+<tr><td>Keys.so</td><td>где конкуренты получают трафик, а мы нет</td><td>пересечение доменов, без брендов</td></tr>
+<tr><td>Поиск по сайту в Метрике</td><td>что ищут у нас</td><td>внутренний поиск = скрытый спрос</td></tr>
+<tr><td>Ответы ИИ</td><td>какие вопросы задают и кого советуют</td><td>20–30 вопросов клиентов вручную</td></tr>
+</table></div>
+
+<h2>Стоит ли делать страницу – калькулятор</h2>
+<div class="calc">
+  <label><span>Спрос в регионе</span><input type="range" min="1" max="5" value="3" id="c1"><output id="o1">3</output></label>
+  <label><span>Готовность платить сейчас</span><input type="range" min="1" max="5" value="3" id="c2"><output id="o2">3</output></label>
+  <label><span>Мост к основной продаже</span><input type="range" min="1" max="5" value="3" id="c3"><output id="o3">3</output></label>
+  <label><span>Конкуренция в топ-10</span><input type="range" min="1" max="5" value="3" id="c4"><output id="o4">3</output></label>
+  <div class="score" id="sc">–</div>
+  <div class="verdict" id="vd"></div>
+  <p class="small muted" style="margin-top:10px">Формула: спрос × готовность × мост × (6 − конкуренция) / 25. «Цена / записаться» – готовность 5, «как сделать самому» – 2. Мост – доля тех, кто после входа купит основное, по CRM; нет данных – ставим 3 и проверяем за 2 месяца. Конкуренция 5 – топ занят агрегаторами и федералами, 1–2 – форумы и пустые страницы. Порог seo-lead при этом остаётся: от 20 запросов в месяц и своя польза.</p>
+</div>
+
+<h2>Как упаковать страницу-вход</h2>
+<ol class="clean">
+  <li><b>Ответ на исходный вопрос</b> в первых 2–3 предложениях – это же блок для ИИ. «Русифицировать Lixiang L7 можно двумя путями: прошивка штатной системы (от … ₽, 1 день) или замена головного устройства на Teyes с русским Android (от … ₽)».</li>
+  <li><b>Таблица «путь А против пути Б»</b> – цена, срок, что сохраняется, риски, гарантия. Мост – честное сравнение, а не подмена.</li>
+  <li><b>Кейсы этой модели</b> – фото, цена, срок.</li>
+  <li><b>Кнопка на каждый путь</b> и подбор по модели.</li>
+  <li><b>FAQ</b> из реальных вопросов с форумов и звонков.</li>
+  <li><b>Перелинковка</b>: вход → основная услуга → товар; обратно – «если нужен только русский язык → русификация».</li>
+  <li><b>Цель Метрики на каждую кнопку пути</b> – видно, куда уходят с моста.</li>
+</ol>
+
+<h2>Процесс на клиента</h2>
+<div class="grid g3">
+  <div class="card"><div class="num">1</div><h3>Неделя 1</h3><p class="small">Интервью владельца, выгрузка CRM «с чем пришли / что купили», запросы из Вебмастера.</p></div>
+  <div class="card"><div class="num">2</div><h3>Неделя 2</h3><p class="small">Группы по 12 видам, оценка калькулятором. Частоты – через yandex-dannye.</p></div>
+  <div class="card"><div class="num">3</div><h3>Топ-5</h3><p class="small">Страницы-входы с мостом и целями на кнопки.</p></div>
+  <div class="card"><div class="num">4</div><h3>Через 8–12 недель</h3><p class="small">В CRM считаем «вход → основная продажа». Мост меньше 10% – вопрос уходит в FAQ, хороший – масштабируем по моделям.</p></div>
+</div>
+<p class="small muted">Не снималось: частоты Wordstat по группам скрытого спроса – это следующая задача для yandex-dannye. Окно по коду ошибки P0AA6 в Новосибирске – вывод по выдаче, не замер.</p>
+</main>
+
+<script>
+const T = [
+ ["Смежная боль → наш продукт","«русификация Haval», «нет русского языка Lixiang»","русификация → магнитола с русским Android",{ust:"русификация → Teyes (реальный пример TEYES Sibir)",ev:"русификация Lixiang/Zeekr – общий спрос с TEYES, перекрёстные ссылки"}],
+ ["Бренд производителя как вход","«teyes cc3 установка», «старлайн цена с установкой»","официальный дилер или центр бренда",{ust:"TEYES Sibir в названии, StarLine «Установочные центры» – реальные"}],
+ ["Проблема-симптом","«не держит заряд электромобиль», «запотевают стёкла»","диагностика → ремонт",{ev:"«электромобиль не держит заряд зимой» → зимняя проверка батареи",fit:"«болит спина» → тренировка «Здоровая спина» (Lady Stretch – реальный)"}],
+ ["Модель × услуга","«шумоизоляция Tank 300», «выкуп Kia K5»","страница модели с работами и ценой",{ev:"«ремонт ВВБ Nissan Leaf», «диагностика батареи Lixiang перед покупкой»",dealer:"Рольф – выкуп по моделям (реальный)"}],
+ ["«Не работает / как сделать»","«не работает CarPlay Chery», «как подключить камеру»","инструкция + «сделаем за час»",{ust:"«не работает CarPlay на <модель>» → установка"}],
+ ["Ошибка или код","«P0AA6», «ошибка изоляции ВВБ»","разбор кода → диагностика",{ev:"P0AA6 – нарушение изоляции ВВБ гибрида; в выдаче Новосибирска страниц сервиса не нашли – окно"}],
+ ["Сравнение","«Teyes или магнитола с Али», «StarLine или Pandora»","честное сравнение → подбор",{ust:"«StarLine или Pandora для <модель>»"}],
+ ["Цена","«сколько стоит русификация Zeekr»","калькулятор или прайс → заявка",{ust:"«сколько стоит Teyes на Prado под ключ»",ev:"«замена батареи Leaf цена»"}],
+ ["Сезонный повод","«автозапуск зимой», «букет на 1 сентября»","сезонная страница за 2–3 месяца до пика",{fl:"ВкусВилл «Букет на 1 сентября» – реальный; постоянные адреса поводов",fit:"«похудеть к лету» – пик март–апрель",ev:"«запас хода электромобиля зимой в Сибири»"}],
+ ["Закон или обязательство","«ЭРА-ГЛОНАСС для СБКТС», «утильсбор»","обязательная услуга → основная",{dealer:"ЭРА-ГЛОНАСС как вход в растаможку (реальный); для авто из Китая – утильсбор, СБКТС"}],
+ ["Событие жизни","«что надеть на свадьбу гостье», «подарок на годовщину»","гид → подборка каталога",{shop:"Т-Ж, Халва Медиа – реальные; для SIKOR: «что надеть на корпоратив»",fl:"«цветы на годовщину 10 лет»"}],
+ ["Продажа старого → покупка нового","«выкуп авто», «оценка машины онлайн»","выкуп → трейд-ин → новый авто",{dealer:"Авто.ру: статья → свой сервис выкупа (реальный)"}],
+];
+const tw=document.getElementById("types");
+function draw(n){tw.innerHTML="";T.forEach(([h,q,m,ex],i)=>{ if(n!=="all"&&!ex[n]) return;
+ const d=document.createElement("div");d.className="ty";d.innerHTML=`<span class="tag">${i+1}</span><h3>${h}</h3><div class="q">${q}</div><div class="small"><b>Мост:</b> ${m}</div>${n!=="all"?`<div class="small" style="margin-top:6px;background:var(--accent-soft);padding:8px 10px;border-radius:8px">${ex[n]}</div>`:""}`;tw.appendChild(d);});
+ if(!tw.children.length) tw.innerHTML='<p class="muted">Для этой ниши примеров нет.</p>';}
+document.querySelectorAll('.tabs[data-group="n"] button').forEach(b=>b.addEventListener("click",()=>draw(b.dataset.tab)));
+draw("all");
+const ids=[1,2,3,4];
+function sc(){const v=ids.map(i=>+document.getElementById("c"+i).value);ids.forEach((i,k)=>document.getElementById("o"+i).textContent=v[k]);
+ const s=v[0]*v[1]*v[2]*(6-v[3])/25; document.getElementById("sc").textContent=s.toFixed(1);
+ const vd=document.getElementById("vd");
+ if(s<1.5){vd.textContent="Ниже 1,5 – не отдельная страница, а вопрос в FAQ существующей";vd.style.background="var(--bad-bg)";vd.style.color="var(--bad)";}
+ else if(s<4){vd.textContent="1,5–4 – страница-вход, если спрос проходит порог 20 в месяц";vd.style.background="var(--part-bg)";vd.style.color="var(--part)";}
+ else {vd.textContent="4+ – в первую пятёрку, делать с мостом и целями";vd.style.background="var(--ok-bg)";vd.style.color="var(--ok)";}}
+ids.forEach(i=>document.getElementById("c"+i).addEventListener("input",sc));sc();
+</script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
