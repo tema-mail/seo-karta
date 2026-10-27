@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru" data-root="../../" data-page="r/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Видимость GRAFIT в Google</title>
+<link rel="stylesheet" href="../../assets/style.css">
+<style>
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.bars{display:flex;align-items:flex-end;gap:4px;height:220px;margin-top:10px}
+.bars .c{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;min-width:0}
+.bars .b{width:100%;background:var(--accent);border-radius:4px 4px 0 0;transition:height .3s}
+.bars .b.ag{background:var(--part)}
+.bars .v{font:600 10px var(--f-mono);color:var(--muted);margin-bottom:3px;white-space:nowrap}
+.bars .m{font:10px var(--f-mono);color:var(--muted);margin-top:4px;writing-mode:vertical-rl;transform:rotate(180deg);height:44px}
+.split{display:flex;height:40px;border-radius:10px;overflow:hidden;margin:8px 0;font-size:13px;font-weight:600;color:#fff}
+.split div{display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap}
+.legend span{display:inline-flex;align-items:center;gap:6px;margin-right:14px;font-size:13px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.why{counter-reset:w}
+.lesson{display:grid;grid-template-columns:44px 1fr;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:8px 0}
+.lesson .n{font-family:var(--f-display);font-size:24px;color:var(--accent)}
+.lesson h3{margin:0 0 4px;font-size:16px}
+.lesson p{margin:0;font-size:14px}
+.lesson .rule{margin-top:6px;font-size:13px;color:var(--ok);font-weight:600}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+  <div class="kicker">Анализ видимости в Google · GRAFIT · данные на 22–24.10.2026</div>
+  <h1>Видимость в Google и заявки: показы выросли в 27 раз, а заявок от этого почти не прибавилось. Почему</h1>
+  <p class="lead">grafit-service.ru – сервис и русификация LiXiang, Zeekr, Voyah, Avatr, Lynk в Москве, Уфе и Краснодаре. Источники: Google Search Console (снято 24.10 из кабинета, 23.06.2025–22.10.2026) и полный обход сайта (82 адреса, 24.10). Яндекса нет: Метрика сайта сервиса и Вебмастер нам недоступны.</p>
+  <p class="lead">Это анализ того, как сайт виден в Google и как эта видимость переходит в заявки. Показы выросли в 27 раз, клики – в 2,6 раза. Рост пришёл в основном из информационных запросов, а они в заявки почти не переходят. Заявки на сайте целями не размечены, поэтому их число – оценка по кликам на коммерческие страницы, а не замер.</p>
+</header>
+
+<div class="note"><b>Коротко.</b> Показы выросли, но не те, что дают заявки. Рост дали информационные статьи блога и страницы марок на позициях 6–15, где почти не кликают. Страницы, которые продают (модель × услуга), выложены шаблоном, не связаны ссылками и наполовину не в индексе. Из статей нет дороги к услуге. Заявки на сайте не размечены целями, поэтому рост видимости нельзя напрямую сопоставить с заявками.</div>
+
+<div class="note warn"><b>Чего не знаем.</b> В России основной поиск – Яндекс, а его данных нет. Всё ниже – про Google и про сам сайт. Выводы о сайте (шаблоны, сироты, нет моста, регионы, нет целей) от поисковика не зависят и для Яндекса верны так же.</div>
+
+<h2>Google: показы и клики по месяцам</h2>
+<div class="chart">
+  <div class="tabs" data-group="m" style="margin:0">
+    <button data-tab="imp">Показы</button><button data-tab="clk">Клики</button><button data-tab="ctr">CTR, %</button>
+  </div>
+  <div class="bars" id="bars"></div>
+  <div class="legend small" style="margin-top:8px"><span><i style="background:var(--accent)"></i>до мая 2026</span><span><i style="background:var(--part)"></i>май–октябрь 2026</span></div>
+</div>
+<p class="small muted">Октябрь – 22 дня. Показы: март 410 → сентябрь 11 268 (×27). Клики: март 111 → сентябрь 286 (×2,6). CTR рухнул с 27% до 2,5% – не потому что сайт стал хуже, а потому что к брендовым показам (где кликают все) добавились тысячи небрендовых на 7–25 месте, где не кликает никто.</p>
+
+<h2>Куда пришёл рост – по типам страниц</h2>
+<p class="muted small">Google, 23.07–22.10.2026. Всего 29,7 тыс. показов и 773 клика; доли – от суммы по страницам.</p>
+<h3>Показы</h3>
+<div class="split"><div style="width:49%;background:var(--l-aeo)">блог 49%</div><div style="width:34%;background:var(--l-seo)">марки 34%</div><div style="width:5.5%;background:var(--l-conv)"></div><div style="width:4.6%;background:var(--l-loc)"></div><div style="width:6.9%;background:var(--l-ext)"></div></div>
+<h3>Клики</h3>
+<div class="split"><div style="width:43%;background:var(--l-conv)">главная 43%</div><div style="width:27%;background:var(--l-aeo)">блог 27%</div><div style="width:16%;background:var(--l-seo)">марки</div><div style="width:6%;background:var(--part)">фр.</div><div style="width:4%;background:var(--l-loc)"></div><div style="width:4%;background:var(--l-ext)"></div></div>
+<div class="legend small"><span><i style="background:var(--l-conv)"></i>главная (почти весь бренд)</span><span><i style="background:var(--l-aeo)"></i>блог, 26 статей</span><span><i style="background:var(--l-seo)"></i>марки, 5</span><span><i style="background:var(--part)"></i>франшиза</span><span><i style="background:var(--l-loc)"></i>модели, 22</span><span><i style="background:var(--l-ext)"></i>прочее</span></div>
+<div class="tbl"><table>
+<tr><th>Тип</th><th>Страниц</th><th>Показы</th><th>Клики</th><th>Что это значит</th></tr>
+<tr><td>Главная</td><td>1</td><td>1 693</td><td>335</td><td>Брендовый спрос: «графит сервис» – 62 клика, «графит сервис москва» – 20. Люди, которые уже знают компанию – SEO тут ни при чём</td></tr>
+<tr><td>Блог</td><td>26</td><td>15 275</td><td>210</td><td>Информационные: «сколько проезжает Zeekr 001», «батарея Voyah Free», «прошивка Lixiang 8.5». Читатели со всей России, Казахстана, Беларуси. Ни одна статья не ведёт на страницу модели</td></tr>
+<tr><td>Марки</td><td>5</td><td>10 681</td><td>126</td><td>Самые денежные запросы («сервис voyah москва», «ремонт zeekr»), но позиции 6–15 и CTR около 1%. «Сервис lixiang в москве» – 162 показа на 23 месте, 0 кликов</td></tr>
+<tr><td>Модели</td><td>22</td><td>1 419</td><td>31</td><td>30 шаблонных страниц «модель × услуга» – то, что продаёт лучше всего. Почти не видны: 13 «найдены, но не проиндексированы», 3 отдают 404, 1 закрыта в robots</td></tr>
+<tr><td>Франшиза</td><td>1</td><td>677</td><td>49</td><td>Клики людей, которые хотят открыть бизнес, а не починить машину. В отчётах их надо отделять</td></tr>
+</table></div>
+<p class="small muted">Запросы: GSC показывает только 28% показов (остальное скрыто). Среди видимых: бренд – 91 клик из 117; небрендовые коммерческие – 6 364 показа и 13 кликов. По городу в запросе: Москва 981 показ, Уфа 7, Краснодар 3.</p>
+
+<h2>Что появилось на сайте за май–октябрь 2026</h2>
+<p>По номерам страниц Тильды: за май–октябрь 2026 появилось около 59 из 66 живых страниц.</p>
+<div class="grid g3">
+  <div class="card"><div class="num">30</div><h3>шаблонных страниц моделей</h3><p class="small">28 из них выложены подряд в июле. Цены и гарантия есть, кейсов нет, отзывы – скриншоты. Ссылаются на них только соседние модели.</p></div>
+  <div class="card"><div class="num">19</div><h3>статей блога</h3><p class="small">11 в июле, 7 в августе, 1 в сентябре. Информационные. Три коммерческие («Сервис LiXiang в Москве» и др.) лежат в блоге и закрыты noindex.</p></div>
+  <div class="card"><div class="num">8</div><h3>марок и хабов</h3><p class="small">4 страницы марок и 4 хаба русификации. Два хаба (LiXiang, Voyah) закрыты в robots, их модели открыты. Страниц городов и цен нет.</p></div>
+</div>
+
+<h2>8 причин, почему показы не переходят в заявки</h2>
+<p class="muted small">Нажмите, чтобы раскрыть доказательство.</p>
+<div id="why"></div>
+
+<h2>Сколько заявок можно было ждать от Google</h2>
+<div class="card"><p>На коммерческие страницы (марки, модели, русификация) за 3 месяца пришло около 170 кликов из Google – примерно 57 в месяц. При типичной конверсии сайта услуг 2–3% это <b>1–2 заявки в месяц</b> (оценка, не замер). Блог с 210 кликами без моста даёт около нуля. То есть «по Google заявок нет» – ожидаемо при такой структуре. Вопрос – что было в Яндексе, и это видно только в Метрике.</p></div>
+
+<h2>Что делать GRAFIT – по порядку</h2>
+<ol class="clean">
+  <li><b>Учёт заявок.</b> Один счётчик Метрики вместо двух, цели на каждую форму, клик по телефону, Telegram и MAX, единая страница «Спасибо». Без этого любое SEO – вслепую.</li>
+  <li><b>Техника.</b> Убрать дубль главной (черновик «…в Севастопале» с телефоном-заглушкой) из sitemap; открыть хабы русификации; 404 моделей – вернуть или 301; «Лисян» в title Avatr; второй H1 на 7 моделях.</li>
+  <li><b>Регионы.</b> Адрес Краснодара обновить на 68 страницах (на картах организация переехала). Номер Уфы на сайт. Убрать «Санкт-Петербург» из ~30 страниц – филиала там нет. Поле «город» в форме. Страницы городов – только с адресом, номером и работами этого города.</li>
+  <li><b>Связать коммерцию.</b> Марка → модели → услуги ссылками; из каждой статьи – переход на страницу модели и услуги; три коммерческие страницы из блога открыть и перенести в услуги.</li>
+  <li><b>Поднять марки с 6–15 места в топ-5.</b> Это самые денежные запросы. Кейсы по моделям с фото и ценой, отзывы текстом, а не скриншотами.</li>
+  <li><b>Ссылки.</b> Мусорные домены (wholehousecleaningservices.com – 84 ссылки, бразильский сайт – 32) – в Google отклонить; новых бирж не покупать, пока не сделаны пункты 1–5.</li>
+</ol>
+
+
+<p class="small muted" style="margin-top:24px">Попутно: в коде 68 страниц есть скрытый текст «Страница находится в разработке» – стоит проверить, не всплывает ли он. Скорость не снята (бесплатный PageSpeed ответил 429). Даты создания страниц – оценка по номерам Тильды.</p>
+</main>
+
+<script>
+const M=[["06.25",44,9],["07",252,56],["08",338,66],["09",379,67],["10",345,76],["11",356,73],["12",355,111],["01.26",392,92],["02",429,124],["03",410,111],["04",747,114],["05",1133,108],["06",2423,132],["07",4997,194],["08",8409,224],["09",11268,286],["10*",8345,216]];
+const bars=document.getElementById("bars");
+function draw(k){bars.innerHTML="";const vals=M.map(m=>k==="imp"?m[1]:k==="clk"?m[2]:+(m[2]/m[1]*100).toFixed(1));const mx=Math.max(...vals);
+ M.forEach((m,i)=>{const c=document.createElement("div");c.className="c";const ag=i>=11;
+  c.innerHTML=`<div class="v">${vals[i]>=1000?(vals[i]/1000).toFixed(1)+"к":vals[i]}</div><div class="b${ag?" ag":""}" style="height:${Math.max(2,vals[i]/mx*170)}px"></div><div class="m">${m[0]}</div>`;bars.appendChild(c);});}
+document.querySelectorAll('.tabs[data-group="m"] button').forEach(b=>b.addEventListener("click",()=>draw(b.dataset.tab)));draw("imp");
+
+const W=[
+ ["Рост дал информационный блог, а не коммерция","Блог – около половины показов за 3 месяца. Топ-статьи: «Zeekr 001 сколько проезжает» 3 263 показа, «батарея Voyah Free» 2 702, «прошивка Lixiang 8.5» 2 538. Это владельцы машин, которые ищут информацию, со всей страны и из СНГ (Казахстан 704 показа, Беларусь 677). Им не нужен сервис в Москве сегодня."],
+ ["Из статей нет дороги к услуге","Проверено кодом: ни одна из 20 скачанных статей не ссылается на страницу модели (/service/… или /russification/…). Только общий блок «Популярные услуги» и попап. В «Проблемы Voyah Free» после своего FAQ стоит чужой FAQ про русификацию Geely, Haval, Chery."],
+ ["Денежные запросы стоят на 6–25 месте","«сервис lixiang в москве» – 162 показа, позиция 23, 0 кликов. «сервис voyah» – 121 показ, 10,3. «ремонт zeekr» – 70, 15,2. В топ-5 только мелкие запросы по 9–30 показов. Средняя позиция 8 по сайту обманчива – её вытягивает бренд на 1–3 месте."],
+ ["Страницы моделей – шаблонные сироты","30 страниц за июль, одна структура. На /service/voyah/free/ ведёт 1 внутренняя ссылка, на /service/lixiang/l7/ – 3, и только с соседних моделей; страницы марок на модели не ссылаются. Google: 13 моделей «найдены, но не проиндексированы» – типичная реакция на шаблон без ссылок."],
+ ["Технические дыры в коммерции","404: /zeekr-001-service, /russification/zeekr/007, /russification/zeekr/7x. В robots закрыты хабы /russification/lixiang/ и /voyah/ (и /russification/lixiang/l7/). Три коммерческие страницы в блоге – noindex. Дубль главной в sitemap – черновик «в Севастопале» с телефоном +7 000 000 00 00."],
+ ["Регионы перепутаны","Один телефон на три города, в форме нет поля «город». Краснодар на 68 страницах по старому адресу – на Яндекс Картах эта карточка «переехала», новая – Солнечная 4Б. Номера Уфы (+7 347 210-73-20) на сайте нет. На ~30 страницах «Москва, Санкт-Петербург, Краснодарский край» – Уфы нет, а филиала в СПб нет. В Google видна только Москва."],
+ ["Заявки никто не считал","В коде нет ни одной своей цели reachGoal; клики по телефону, Telegram и MAX не размечены. Два счётчика Метрики. Формы в статьях не ведут на /thanks, остальные ведут. Поэтому «заявок нет» – это ещё и «заявок не видно»."],
+ ["Клиенты, скорее всего, идут с карт и по бренду","Москва на Яндекс Картах: 4,9, 91 оценка, «Хорошее место 2026»; Уфа 5,0, 44; Краснодар 5,0, 27. Брендовые запросы – 78% видимых кликов в Google. Этот канал в отчёты о поиске не попадает. А в 2ГИС у Москвы другой корпус, другой телефон и «давно не обновляла данные»."],
+];
+const wy=document.getElementById("why");
+W.forEach(([h,p],i)=>{const d=document.createElement("details");if(i<2)d.open=true;d.innerHTML=`<summary>${i+1}. ${h}</summary><div class="small">${p}</div>`;wy.appendChild(d);});
+
+</script>
+<script src="../../assets/site.js"></script>
+</body>
+</html>
